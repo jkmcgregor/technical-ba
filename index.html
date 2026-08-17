@@ -79,59 +79,68 @@
             color: var(--accent);
         }
 
-        /* Hero Section */
+        /* Full-Width Hero Section */
         .hero {
-            padding: 4rem 0 3rem 0;
+            padding: 4rem 0 3.5rem 0;
             background-color: var(--bg-card);
             border-bottom: 1px solid var(--border);
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-            align-items: center;
+        .hero-full {
+            width: 100%;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             color: var(--primary);
-            line-height: 1.2;
-            margin-bottom: 1rem;
+            line-height: 1.25;
+            margin-bottom: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
         }
 
         .hero p {
-            font-size: 1.125rem;
+            font-size: 1.15rem;
             color: var(--text-muted);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 100%;
+            line-height: 1.7;
         }
 
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
         }
 
         .tag {
             background-color: var(--accent-soft);
             color: var(--accent);
-            padding: 0.35rem 0.75rem;
+            padding: 0.4rem 0.85rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.875rem;
             font-weight: 600;
         }
 
-        .contact-card {
+        .hero-banner {
             background: var(--bg-main);
             border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: var(--radius);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 var(--radius) var(--radius) 0;
         }
 
-        .contact-card h3 {
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        .hero-banner h3 {
+            font-size: 1.05rem;
             color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-banner p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0;
         }
 
         /* Section Layout */
@@ -434,8 +443,8 @@
         }
 
         @media (max-width: 768px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
+            .hero h1 {
+                font-size: 2rem;
             }
             .nav-container {
                 flex-direction: column;
@@ -465,10 +474,10 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Full Width Hero Section -->
     <div class="hero">
-        <div class="container hero-grid">
-            <div>
+        <div class="container">
+            <div class="hero-full">
                 <h1>Translating Complex Business Needs into Technical Execution</h1>
                 <p>Senior IT Business Analyst and Project Manager with over a decade of experience orchestrating enterprise system integrations, streamlining operational workflows, and delivering structured SDLC governance across cross-functional teams.</p>
                 <div class="hero-tags">
@@ -477,6 +486,10 @@
                     <span class="tag">Process Engineering (BPMN)</span>
                     <span class="tag">Enterprise Integration</span>
                     <span class="tag">Requirements Engineering</span>
+                </div>
+                <div class="hero-banner">
+                    <h3>Technical & Strategic Leadership</h3>
+                    <p>Specializing in complex system rollouts, ERP/HRIS lifecycle management, and API-driven process automation.</p>
                 </div>
             </div>
         </div>
@@ -783,5 +796,3 @@
     </script>
 </body>
 </html>
-
-```
