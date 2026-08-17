@@ -3,85 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J. McGregor | Technical Business Analyst & Systems Architect</title>
+    <title>Jaina McGregor | Senior Business Analyst & IT Project Manager</title>
     <style>
         :root {
-            --bg-primary: #0f172a;
-            --bg-secondary: #1e293b;
-            --bg-card: #334155;
-            --accent-blue: #38bdf8;
-            --accent-hover: #0284c7;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #475569;
-            --success-color: #34d399;
+            --primary: #1e293b;
+            --primary-light: #334155;
+            --accent: #2563eb;
+            --accent-soft: #eff6ff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --bg-main: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --radius: 8px;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-primary);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
-            padding: 2rem 1rem;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
+            padding: 0 1.5rem;
         }
 
+        /* Header / Nav */
         header {
-            margin-bottom: 3rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2rem;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: var(--text-main);
-            margin-bottom: 0.5rem;
-        }
-
-        .subtitle {
-            font-size: 1.25rem;
-            color: var(--accent-blue);
-            margin-bottom: 1rem;
-        }
-
-        .meta-nav {
+        .nav-container {
             display: flex;
-            gap: 1.5rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
         }
 
-        .meta-nav a {
-            color: var(--accent-blue);
+        .brand {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary);
             text-decoration: none;
         }
 
-        .meta-nav a:hover {
-            text-decoration: underline;
+        .brand span {
+            color: var(--accent);
+            font-weight: 400;
         }
 
-        section {
-            margin-bottom: 3rem;
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
-        h2 {
-            font-size: 1.75rem;
-            color: var(--accent-blue);
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 3rem 0;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
             margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 0.5rem;
         }
 
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background-color: var(--accent-soft);
+            color: var(--accent);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .contact-card {
+            background: var(--bg-main);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            border-radius: var(--radius);
+        }
+
+        .contact-card h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Section Layout */
+        section {
+            padding: 3.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+        }
+
+        /* Competency Matrix */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -89,299 +177,631 @@
         }
 
         .card {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
             padding: 1.5rem;
+            box-shadow: var(--shadow);
         }
 
         .card h3 {
+            color: var(--primary);
             margin-bottom: 0.75rem;
-            color: var(--text-main);
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .card ul {
-            list-style-type: square;
-            padding-left: 1.25rem;
-            color: var(--text-muted);
+            list-style: none;
         }
 
         .card li {
+            position: relative;
+            padding-left: 1.25rem;
             margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
         }
 
-        /* BPMN Container */
-        .bpmn-container {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
+        .card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* BPMN Card Component Styling */
+        .artifact-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
             padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 2rem;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .artifact-header {
+            margin-bottom: 1.25rem;
+        }
+
+        .artifact-title {
+            margin: 0 0 0.35rem 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .artifact-sub {
+            margin: 0;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        .bpmn-container {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.25rem;
             overflow-x: auto;
         }
 
-        .bpmn-svg {
-            width: 100%;
-            min-width: 600px;
-            height: auto;
+        .bpmn-toggle {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
         }
 
-        /* Requirements Traceability Matrix Table */
-        .rtm-table {
+        .toggle-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .toggle-btn:hover {
+            background: #f1f5f9;
+        }
+
+        .toggle-btn.active {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        .flow-wrapper {
+            display: none;
+            align-items: center;
+            gap: 0.75rem;
+            min-width: 700px;
+        }
+
+        .flow-wrapper.active {
+            display: flex;
+        }
+
+        .flow-step {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .flow-step.start-node,
+        .flow-step.end-node {
+            font-weight: bold;
+            padding: 0.5rem 0.75rem;
+        }
+
+        .flow-step.error {
+            background: #fef2f2;
+            border-color: #fca5a5;
+            color: #991b1b;
+        }
+
+        .flow-step.success {
+            background: #f0fdf4;
+            border-color: #86efac;
+            color: #166534;
+        }
+
+        .flow-step.highlight {
+            background: #eff6ff;
+            border-color: #93c5fd;
+        }
+
+        .step-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .step-sub {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        .flow-arrow {
+            color: #94a3b8;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Table Styling */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        table {
             width: 100%;
             border-collapse: collapse;
-            background-color: var(--bg-secondary);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-
-        .rtm-table th, .rtm-table td {
-            padding: 0.75rem 1rem;
             text-align: left;
-            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
         }
 
-        .rtm-table th {
-            background-color: var(--bg-card);
-            color: var(--accent-blue);
+        th {
+            background-color: #f1f5f9;
+            color: var(--primary);
+            padding: 0.75rem 1rem;
             font-weight: 600;
+            border-bottom: 2px solid var(--border);
         }
 
-        .rtm-table tr:hover {
-            background-color: var(--bg-card);
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-muted);
         }
 
-        .status-tag {
-            display: inline-block;
-            padding: 0.25rem 0.5rem;
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Case Studies */
+        .case-study {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        .case-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .case-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .case-badge {
+            background: #f1f5f9;
+            color: var(--primary-light);
+            padding: 0.25rem 0.6rem;
             border-radius: 4px;
             font-size: 0.8rem;
-            font-weight: bold;
-            background-color: rgba(52, 211, 153, 0.2);
-            color: var(--success-color);
+            font-weight: 600;
         }
 
         .case-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
         }
 
-        .case-study {
-            background-color: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-        }
-
-        .case-study h3 {
-            color: var(--accent-blue);
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .case-meta {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1rem;
+        .case-block h5 {
+            color: var(--primary);
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .case-block p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Education & Footer */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
         footer {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            color: var(--text-muted);
             font-size: 0.9rem;
         }
 
-        @media print {
-            body {
-                background-color: #fff;
-                color: #000;
+        footer a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
             }
-            .card, .case-study, .bpmn-container, .rtm-table {
-                background-color: #fff;
-                border: 1px solid #ccc;
-                color: #000;
+            .nav-container {
+                flex-direction: column;
+                justify-content: center;
+                gap: 0.5rem;
+                height: auto;
+                padding: 1rem 0;
             }
-            h1, h2, .subtitle, .case-study h3, .rtm-table th {
-                color: #000;
+            nav a {
+                margin: 0 0.5rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header role="banner">
-            <h1>J. McGregor</h1>
-            <div class="subtitle">Technical Business Analyst & Systems Architect</div>
-            <nav class="meta-nav" aria-label="Main Navigation">
-                <span>Location: Remote / Pacific US</span>
-                <span>Focus: Enterprise Integration, Process Automation, & SDLC</span>
+    <!-- Header / Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
+            <nav>
+                <a href="#competencies">Competencies</a>
+                <a href="#frameworks">Methodology</a>
+                <a href="#case-studies">Case Studies</a>
+                <a href="#education">Education</a>
             </nav>
-        </header>
+        </div>
+    </header>
 
-        <main id="main-content">
-            <!-- Core Competencies Section -->
-            <section aria-labelledby="competencies-heading">
-                <h2 id="competencies-heading">Core Competencies</h2>
-                <div class="grid-3">
-                    <div class="card">
-                        <h3>Requirements & Analysis</h3>
-                        <ul>
-                            <li>BRD, FRD, & User Story Modeling</li>
-                            <li>BPMN 2.0 Process Mapping (As-Is / To-Be)</li>
-                            <li>Requirements Traceability Matrices (RTM)</li>
-                            <li>Gap Analysis & Feasibility Studies</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Technical Integration</h3>
-                        <ul>
-                            <li>REST API & Interface Architecture</li>
-                            <li>SQL Data Extraction & Validation</li>
-                            <li>Python & Scripted Automation Workflows</li>
-                            <li>ERP & Enterprise System Migration</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Methodology & Delivery</h3>
-                        <ul>
-                            <li>Agile / Scrum & Waterfall SDLC</li>
-                            <li>Cross-Functional Stakeholder Alignment</li>
-                            <li>User Acceptance Testing (UAT) Governance</li>
-                            <li>Risk Mitigation & Change Control</li>
-                        </ul>
-                    </div>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container hero-grid">
+            <div>
+                <h1>Translating Complex Business Needs into Technical Execution</h1>
+                <p>Senior IT Business Analyst and Project Manager with over a decade of experience orchestrating enterprise system integrations, streamlining operational workflows, and delivering structured SDLC governance across cross-functional teams.</p>
+                <div class="hero-tags">
+                    <span class="tag">Systems Architecture & Design</span>
+                    <span class="tag">Agile / Waterfall Governance</span>
+                    <span class="tag">Process Engineering (BPMN)</span>
+                    <span class="tag">Enterprise Integration</span>
+                    <span class="tag">Requirements Engineering</span>
                 </div>
-            </section>
+            </div>
+            <div class="contact-card">
+                <h3>Technical & Strategic Leadership</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">Specializing in complex system rollouts, ERP/HRIS lifecycle management, and API-driven process automation.</p>
+                <a href="https://www.linkedin.com/in/jainamcgregor" class="btn" target="_blank" rel="noopener">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </div>
 
-            <!-- Process Mapping Artifact (BPMN) -->
-            <section aria-labelledby="bpmn-heading">
-                <h2 id="bpmn-heading">Process Re-engineering Artifact (BPMN 2.0)</h2>
+    <!-- Core Competencies -->
+    <section id="competencies">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">A balanced approach pairing functional process discovery with deep technical execution.</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Requirements Engineering</h3>
+                    <ul>
+                        <li>Business Requirements Documents (BRD / FRD)</li>
+                        <li>User Story Mapping & Acceptance Criteria (Gherkin)</li>
+                        <li>Requirements Traceability Matrices (RTM)</li>
+                        <li>As-Is vs. To-Be Business Process Mapping</li>
+                        <li>Gap Analysis & Feasibility Studies</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>SDLC & Delivery Management</h3>
+                    <ul>
+                        <li>Agile / Scrum & Waterfall Methodologies</li>
+                        <li>Cross-Functional Team & Vendor Coordination</li>
+                        <li>UAT Planning, Execution, & Defect Tracking</li>
+                        <li>Scope Governance & Change Control</li>
+                        <li>Release Readiness & Cutover Strategy</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Technical Systems Analysis</h3>
+                    <ul>
+                        <li>Data Flow Diagrams (DFD) & ERD Visualization</li>
+                        <li>API Payload Analysis & Integration Mapping</li>
+                        <li>SQL Queries & Data Validation Testing</li>
+                        <li>Enterprise Software (ERP, HRIS, Financials)</li>
+                        <li>System Topology & Sequence Diagrams</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodological Artifacts & Visual Proof -->
+    <section id="frameworks" style="background-color: var(--bg-card);">
+        <div class="container">
+            <h2 class="section-title">Methodology & Visual Artifacts</h2>
+            <p class="section-subtitle">Sample frameworks illustrating structured discovery, analysis, and execution planning.</p>
+
+            <!-- Sample Artifact 1 Block -->
+            <div class="artifact-card">
+                <div class="artifact-header">
+                    <h3 class="artifact-title">Sample Artifact 1: As-Is vs. To-Be Automated Intake Architecture (BPMN 2.0)</h3>
+                    <p class="artifact-sub">Demonstrating how manual intake bottlenecks are restructured into API-driven automated processing queues.</p>
+                </div>
+
+                <!-- Interactive Dynamic Diagram -->
                 <div class="bpmn-container">
-                    <svg class="bpmn-svg" viewBox="0 0 800 220" xmlns="http://www.w3.org/2000/svg" aria-label="BPMN Process Flow Diagram">
-                        <!-- Lanes -->
-                        <rect x="10" y="10" width="780" height="90" fill="#334155" stroke="#475569" rx="4"/>
-                        <rect x="10" y="110" width="780" height="90" fill="#334155" stroke="#475569" rx="4"/>
-                        <text x="20" y="60" fill="#94a3b8" font-size="12" font-weight="bold" transform="rotate(-90 20,60)">CLIENT</text>
-                        <text x="20" y="160" fill="#94a3b8" font-size="12" font-weight="bold" transform="rotate(-90 20,160)">SYSTEM</text>
+                    <div class="bpmn-toggle">
+                        <button id="btn-asis" class="toggle-btn active" onclick="switchBPMNState('asis')">As-Is Process (Manual)</button>
+                        <button id="btn-tobe" class="toggle-btn" onclick="switchBPMNState('tobe')">To-Be Process (Automated)</button>
+                    </div>
 
-                        <!-- Start Event -->
-                        <circle cx="70" cy="55" r="18" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
-                        <text x="70" y="60" fill="#ffffff" font-size="10" text-anchor="middle">Start</text>
+                    <!-- As-Is Flow -->
+                    <div id="flow-asis" class="flow-wrapper active">
+                        <div class="flow-step start-node error">Start</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <span class="step-title">Manual Email Entry</span>
+                            <span class="step-sub">Unstructured Data</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step">
+                            <span class="step-title">Spreadsheet Logging</span>
+                            <span class="step-sub">Human Error Risk</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step decision-node">
+                            <span class="step-title">Manual Review</span>
+                            <span class="step-sub">Manager Approval</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step end-node error">
+                            <span class="step-title">3–5 Day Backlog</span>
+                            <span class="step-sub">High Bottleneck</span>
+                        </div>
+                    </div>
 
-                        <!-- Arrow 1 -->
-                        <line x1="88" y1="55" x2="130" y2="55" stroke="#94a3b8" stroke-width="2"/>
-
-                        <!-- Task 1 -->
-                        <rect x="130" y="30" width="110" height="50" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
-                        <text x="185" y="52" fill="#f8fafc" font-size="11" text-anchor="middle">Submit Request</text>
-                        <text x="185" y="66" fill="#94a3b8" font-size="9" text-anchor="middle">(API Gateway)</text>
-
-                        <!-- Arrow 2 (Down to System) -->
-                        <path d="M 240 55 L 280 55 L 280 155 L 310 155" fill="none" stroke="#94a3b8" stroke-width="2"/>
-
-                        <!-- Task 2 (System) -->
-                        <rect x="310" y="130" width="120" height="50" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
-                        <text x="370" y="152" fill="#f8fafc" font-size="11" text-anchor="middle">Validate Payload</text>
-                        <text x="370" y="166" fill="#94a3b8" font-size="9" text-anchor="middle">& Query DB</text>
-
-                        <!-- Arrow 3 (Gateway) -->
-                        <line x1="430" y1="155" x2="480" y2="155" stroke="#94a3b8" stroke-width="2"/>
-
-                        <!-- Gateway -->
-                        <polygon points="500,135 520,155 500,175 480,155" fill="#0284c7" stroke="#38bdf8" stroke-width="2"/>
-                        <text x="500" y="159" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">?</text>
-
-                        <!-- Arrow 4 (Valid to End) -->
-                        <line x1="520" y1="155" x2="620" y2="155" stroke="#94a3b8" stroke-width="2"/>
-
-                        <!-- Task 3 (System End) -->
-                        <rect x="620" y="130" width="110" height="50" rx="6" fill="#1e293b" stroke="#34d399" stroke-width="2"/>
-                        <text x="675" y="152" fill="#f8fafc" font-size="11" text-anchor="middle">Process Sync</text>
-                        <text x="675" y="166" fill="#34d399" font-size="9" text-anchor="middle">HTTP 200 OK</text>
-
-                        <!-- End Event -->
-                        <circle cx="765" cy="155" r="16" fill="#1e293b" stroke="#34d399" stroke-width="3"/>
-                    </svg>
+                    <!-- To-Be Flow -->
+                    <div id="flow-tobe" class="flow-wrapper">
+                        <div class="flow-step start-node success">Start</div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step highlight">
+                            <span class="step-title">Webhook Intake</span>
+                            <span class="step-sub">JSON Payload</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step highlight">
+                            <span class="step-title">Validation & Schema Check</span>
+                            <span class="step-sub">Automated Rule Engine</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step highlight">
+                            <span class="step-title">Automated Routing</span>
+                            <span class="step-sub">ERP/Database Push</span>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-step end-node success">
+                            <span class="step-title">Instant Execution</span>
+                            <span class="step-sub">&lt; 1s Latency</span>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Sample Requirements Traceability Matrix -->
-            <section aria-labelledby="rtm-heading">
-                <h2 id="rtm-heading">Requirements Traceability Sample Matrix</h2>
-                <div style="overflow-x: auto;">
-                    <table class="rtm-table">
+            <!-- Artifact 2: Requirements Traceability Matrix -->
+            <div class="artifact-card" style="margin-bottom: 0;">
+                <div class="artifact-header">
+                    <h3 class="artifact-title">Sample Artifact 2: Requirements Traceability Matrix (RTM) Structure</h3>
+                    <p class="artifact-sub">Maintaining complete line-of-sight from high-level business goals down to UAT test execution.</p>
+                </div>
+                <div class="table-responsive">
+                    <table>
                         <thead>
                             <tr>
                                 <th>Req ID</th>
-                                <th>Business Requirement</th>
-                                <th>Functional Specification</th>
-                                <th>Verification Method</th>
-                                <th>Status</th>
+                                <th>Business Objective</th>
+                                <th>Functional Requirement</th>
+                                <th>System Component</th>
+                                <th>User Story ID</th>
+                                <th>UAT Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>REQ-001</td>
-                                <td>Real-time synchronization of enterprise user accounts across platforms.</td>
-                                <td>System shall trigger REST API payload upon account creation event in HRIS.</td>
-                                <td>Automated Integration Test</td>
-                                <td><span class="status-tag">Verified</span></td>
+                                <td><strong>BRD-01</strong></td>
+                                <td>Reduce customer onboarding time by 50%</td>
+                                <td>System must validate payload data asynchronously via API</td>
+                                <td>Integration Middleware</td>
+                                <td>US-102</td>
+                                <td><span style="color: #16a34a; font-weight: bold;">Passed</span></td>
                             </tr>
                             <tr>
-                                <td>REQ-002</td>
-                                <td>Data integrity validation for legacy database transfers.</td>
-                                <td>Execute SQL verification scripts prior to batch transformation load.</td>
-                                <td>UAT / Data Audit</td>
-                                <td><span class="status-tag">Verified</span></td>
+                                <td><strong>BRD-02</strong></td>
+                                <td>Ensure audit compliance for user access</td>
+                                <td>Role-based access logs must persist for 7 years</td>
+                                <td>Security / IAM Module</td>
+                                <td>US-204</td>
+                                <td><span style="color: #16a34a; font-weight: bold;">Passed</span></td>
                             </tr>
                             <tr>
-                                <td>REQ-003</td>
-                                <td>Auditable transaction logs for security compliance.</td>
-                                <td>System must write system access logs to an encrypted central repository.</td>
-                                <td>Security Compliance Review</td>
-                                <td><span class="status-tag">Verified</span></td>
+                                <td><strong>BRD-03</strong></td>
+                                <td>Automate error alerting for failed syncing</td>
+                                <td>Trigger webhook notification on 5xx status codes</td>
+                                <td>Notification Service</td>
+                                <td>US-305</td>
+                                <td><span style="color: #2563eb; font-weight: bold;">In Progress</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
 
-            <!-- Case Studies -->
-            <section aria-labelledby="casestudies-heading">
-                <h2 id="casestudies-heading">Anonymized Case Studies</h2>
-                <div class="case-grid">
-                    <article class="case-study">
-                        <h3>Enterprise ERP Integration & Workflow Optimization</h3>
-                        <div class="case-meta">Domain: Supply Chain / Logistics | Role: Lead Systems Architect</div>
-                        <p><strong>Challenge:</strong> Legacy manual data entry mechanisms created operational bottlenecks, leading to processing delays and high error rates during batch updates.</p>
-                        <p><strong>Solution:</strong> Spearheaded business process mapping sessions to define To-Be workflows. Modeled end-to-end integration requirements and engineered automated API data flows to interface directly with core ERP infrastructure.</p>
-                        <p><strong>Impact:</strong> Reduced processing cycle times significantly while eliminating manual transposition errors across high-volume transaction cycles.</p>
-                    </article>
+    <!-- Anonymized Enterprise Case Studies -->
+    <section id="case-studies">
+        <div class="container">
+            <h2 class="section-title">Enterprise Case Studies</h2>
+            <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
 
-                    <article class="case-study">
-                        <h3>System Migration & API Modernization</h3>
-                        <div class="case-meta">Domain: Financial / Enterprise Systems | Role: Business Analyst</div>
-                        <p><strong>Challenge:</strong> Decentralized system platforms caused data fragmentation, impeding cross-departmental reporting and auditing compliance.</p>
-                        <p><strong>Solution:</strong> Developed comprehensive Requirements Traceability Matrices, facilitated JAD sessions with engineering leads, and structured functional specification artifacts to drive API endpoint development.</p>
-                        <p><strong>Impact:</strong> Successfully unified system data streams on-schedule with full regulatory compliance and zero critical issues upon product rollout.</p>
-                    </article>
+            <!-- Case Study 1 -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">Enterprise HRIS & Payroll Platform Migration</div>
+                    <span class="case-badge">System Integration & SDLC Execution</span>
                 </div>
-            </section>
-        </main>
+                <p>Orchestrated the requirements lifecycle and system integration mapping for an enterprise transition to a cloud-based HRIS platform, ensuring data continuity across complex legacy employee records.</p>
+                <div class="case-grid">
+                    <div class="case-block">
+                        <h5>The Challenge</h5>
+                        <p>Legacy data structures lacked standardization, resulting in payload failures during interface syncing between payroll, benefit systems, and central databases.</p>
+                    </div>
+                    <div class="case-block">
+                        <h5>The Analytical Approach</h5>
+                        <p>Led cross-functional discovery workshops to document as-is data models. Designed a comprehensive gap analysis and mapped canonical payload schemas across systems.</p>
+                    </div>
+                    <div class="case-block">
+                        <h5>The Outcome</h5>
+                        <p>Achieved 100% data fidelity during migration cutover, eliminated manual reconciliation processes, and established automated validation rules for post-launch governance.</p>
+                    </div>
+                </div>
+            </div>
 
-        <footer>
-            <p>&copy; <span id="year"></span> J. McGregor. All rights reserved.</p>
-        </footer>
-    </div>
+            <!-- Case Study 2 -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">Complex Cadence & Third-Party API Integration Rollout</div>
+                    <span class="case-badge">Technical Business Analysis</span>
+                </div>
+                <p>Managed the interface architecture and operational alignment for integrating a major scheduling/cadence module into existing core operational software.</p>
+                <div class="case-grid">
+                    <div class="case-block">
+                        <h5>The Challenge</h5>
+                        <p>High variability in vendor documentation created ambiguity in API response handling, threatening the planned deployment timeline and scope.</p>
+                    </div>
+                    <div class="case-block">
+                        <h5>The Analytical Approach</h5>
+                        <p>Authored detailed sequence diagrams and edge-case handling specs. Acted as primary liaison between vendor engineering leads and internal business units.</p>
+                    </div>
+                    <div class="case-block">
+                        <h5>The Outcome</h5>
+                        <p>Delivered integration milestone on schedule, established automated logging for API error handling, and reduced transaction processing times.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3 -->
+            <div class="case-study">
+                <div class="case-header">
+                    <div class="case-title">Municipal / Public Sector Business Process Re-Engineering</div>
+                    <span class="case-badge">Process Improvement & Governance</span>
+                </div>
+                <p>Evaluated and modernized legacy ERP enterprise workflows for public sector administrative and infrastructure management groups.</p>
+                <div class="case-grid">
+                    <div class="case-block">
+                        <h5>The Challenge</h5>
+                        <p>Siloed operational departments relied on paper-heavy approval loops, causing multi-week delays in work order processing and resource allocation.</p>
+                    </div>
+                    <div class="case-block">
+                        <h5>The Analytical Approach</h5>
+                        <p>Conducted end-to-end process audits, synthesized stakeholder requirements into clear user stories, and engineered streamlined digital routing paths.</p>
+                    </div>
+                    <div class="case-block">
+                        <h5>The Outcome</h5>
+                        <p>Reduced work order approval lead times by 65%, established transparent status tracking dashboards, and enforced standardized audit logging.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Foundation -->
+    <section id="education" style="background-color: var(--bg-card);">
+        <div class="container">
+            <h2 class="section-title">Academic & Technical Foundation</h2>
+            <p class="section-subtitle">Grounded in business information systems with advanced graduate emphasis on IT project leadership.</p>
+
+            <div class="edu-grid">
+                <div class="card">
+                    <h3>Graduate Education</h3>
+                    <p style="font-weight: 600; color: var(--primary);">M.S. in Leadership</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Concentration in IT Project Management</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Northeastern University</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: SDLC Frameworks, Waterfall vs. Agile Methodologies, Enterprise Project Execution, & Team Leadership.</em></p>
+                </div>
+
+                <div class="card">
+                    <h3>Undergraduate Education</h3>
+                    <p style="font-weight: 600; color: var(--primary);">B.S. in Business Information Systems</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Oregon State University</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);"><em>Focus: Systems Analysis & Design, Database Management, Enterprise Architecture, & Business Process Integration.</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© <span id="copyright-year"></span> Jaina McGregor. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;"><a href="https://ba.jainamcgregor.com">ba.jainamcgregor.com</a> | <a href="https://www.linkedin.com/in/jainamcgregor">LinkedIn Profile</a></p>
+        </div>
+    </footer>
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Set dynamic copyright year
+        document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+        // Switch between As-Is and To-Be state diagrams
+        function switchBPMNState(state) {
+            const asIsWrapper = document.getElementById('flow-asis');
+            const toBeWrapper = document.getElementById('flow-tobe');
+            const btnAsIs = document.getElementById('btn-asis');
+            const btnToBe = document.getElementById('btn-tobe');
+
+            if (state === 'asis') {
+                asIsWrapper.classList.add('active');
+                toBeWrapper.classList.remove('active');
+                btnAsIs.classList.add('active');
+                btnToBe.classList.remove('active');
+            } else {
+                toBeWrapper.classList.add('active');
+                asIsWrapper.classList.remove('active');
+                btnToBe.classList.add('active');
+                btnAsIs.classList.remove('active');
+            }
+        }
     </script>
 </body>
 </html>
