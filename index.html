@@ -511,7 +511,6 @@
 </head>
 <body>
 
-    <!-- Header / Navigation -->
     <header>
         <div class="container nav-container">
             <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
@@ -525,7 +524,6 @@
         </div>
     </header>
 
-    <!-- Full Width Hero Section -->
     <div class="hero">
         <div class="container">
             <div class="hero-full">
@@ -546,7 +544,6 @@
         </div>
     </div>
 
-    <!-- Core Competencies -->
     <section id="competencies">
         <div class="container">
             <h2 class="section-title">Core Competencies</h2>
@@ -589,7 +586,6 @@
         </div>
     </section>
 
-    <!-- Recommendations -->
     <section id="recommendations" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Professional Recommendations</h2>
@@ -619,34 +615,30 @@
                     <div class="rec-author">
                         <div class="rec-name">Simon Cleveland, Ph.D.</div>
                         <div class="rec-title">Educator & Author</div>
-                        <div class="rec-relationship">Instructor at Northeastern University</div>
+                        <div class="rec-relationship">Graduate Program Instructor at Northeastern University</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Methodological Artifacts & Visual Proof -->
     <section id="frameworks">
         <div class="container">
             <h2 class="section-title">Methodology & Visual Artifacts</h2>
             <p class="section-subtitle">Sample frameworks illustrating structured discovery, analysis, and execution planning.</p>
 
-            <!-- Sample Artifact 1 Block -->
             <div class="artifact-card">
                 <div class="artifact-header">
                     <h3 class="artifact-title">Sample Artifact 1: As-Is vs. To-Be Automated Intake Architecture (BPMN 2.0)</h3>
                     <p class="artifact-sub">Demonstrating how manual intake bottlenecks are restructured into API-driven automated processing queues.</p>
                 </div>
 
-                <!-- Interactive Dynamic Diagram -->
                 <div class="bpmn-container">
                     <div class="bpmn-toggle">
                         <button id="btn-asis" class="toggle-btn active" onclick="switchBPMNState('asis')">As-Is Process (Manual)</button>
                         <button id="btn-tobe" class="toggle-btn" onclick="switchBPMNState('tobe')">To-Be Process (Automated)</button>
                     </div>
 
-                    <!-- As-Is Flow -->
                     <div id="flow-asis" class="flow-wrapper active">
                         <div class="flow-step start-node error">Start</div>
                         <div class="flow-arrow">→</div>
@@ -671,7 +663,6 @@
                         </div>
                     </div>
 
-                    <!-- To-Be Flow -->
                     <div id="flow-tobe" class="flow-wrapper">
                         <div class="flow-step start-node success">Start</div>
                         <div class="flow-arrow">→</div>
@@ -698,7 +689,6 @@
                 </div>
             </div>
 
-            <!-- Artifact 2: Requirements Traceability Matrix -->
             <div class="artifact-card" style="margin-bottom: 0;">
                 <div class="artifact-header">
                     <h3 class="artifact-title">Sample Artifact 2: Requirements Traceability Matrix (RTM) Structure</h3>
@@ -748,13 +738,11 @@
         </div>
     </section>
 
-    <!-- Anonymized Enterprise Case Studies -->
     <section id="case-studies" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Enterprise Case Studies</h2>
             <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
 
-            <!-- Case Study 1 -->
             <div class="case-study">
                 <div class="case-header">
                     <div class="case-title">Enterprise HRIS & Payroll Platform Migration</div>
@@ -777,7 +765,6 @@
                 </div>
             </div>
 
-            <!-- Case Study 2 -->
             <div class="case-study">
                 <div class="case-header">
                     <div class="case-title">Complex Cadence & Third-Party API Integration Rollout</div>
@@ -800,7 +787,6 @@
                 </div>
             </div>
 
-            <!-- Case Study 3 -->
             <div class="case-study">
                 <div class="case-header">
                     <div class="case-title">Municipal / Public Sector Business Process Re-Engineering</div>
@@ -825,7 +811,6 @@
         </div>
     </section>
 
-    <!-- Academic Foundation -->
     <section id="education">
         <div class="container">
             <h2 class="section-title">Academic & Technical Foundation</h2>
@@ -843,40 +828,35 @@
                 <div class="card">
                     <h3>Undergraduate Education</h3>
                     <p style="font-weight: 600; color: var(--primary);">B.S. in Business Information Systems</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Oregon State University</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);"><em>Focus: Systems Analysis & Design, Database Management, Enterprise Architecture, & Business Process Integration.</em></p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">College of Business</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Oregon State University</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: Systems Analysis & Design, Database Management, Business Process Integration, & Enterprise Application Architecture.</em></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© <span id="copyright-year"></span> Jaina McGregor. All rights reserved.</p>
-            <p style="margin-top: 0.5rem;"><a href="https://ba.jainamcgregor.com">ba.jainamcgregor.com</a></p>
+            <p>&copy; 2026 Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
         </div>
     </footer>
 
     <script>
-        // Set dynamic copyright year
-        document.getElementById('copyright-year').textContent = new Date().getFullYear();
-
-        // Switch between As-Is and To-Be state diagrams
         function switchBPMNState(state) {
-            const asIsWrapper = document.getElementById('flow-asis');
-            const toBeWrapper = document.getElementById('flow-tobe');
+            const asIsFlow = document.getElementById('flow-asis');
+            const toBeFlow = document.getElementById('flow-tobe');
             const btnAsIs = document.getElementById('btn-asis');
             const btnToBe = document.getElementById('btn-tobe');
 
             if (state === 'asis') {
-                asIsWrapper.classList.add('active');
-                toBeWrapper.classList.remove('active');
+                asIsFlow.classList.add('active');
+                toBeFlow.classList.remove('active');
                 btnAsIs.classList.add('active');
                 btnToBe.classList.remove('active');
             } else {
-                toBeWrapper.classList.add('active');
-                asIsWrapper.classList.remove('active');
+                toBeFlow.classList.add('active');
+                asIsFlow.classList.remove('active');
                 btnToBe.classList.add('active');
                 btnAsIs.classList.remove('active');
             }
