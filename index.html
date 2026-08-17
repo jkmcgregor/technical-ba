@@ -205,6 +205,56 @@
             font-weight: bold;
         }
 
+        /* Recommendations Styling */
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .rec-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .rec-quote {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .rec-author {
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .rec-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+        }
+
+        .rec-title {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .rec-relationship {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
+        }
+
         /* BPMN Card Component Styling */
         .artifact-card {
             background: #ffffff;
@@ -467,6 +517,7 @@
             <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
             <nav>
                 <a href="#competencies">Competencies</a>
+                <a href="#recommendations">Recommendations</a>
                 <a href="#frameworks">Methodology</a>
                 <a href="#case-studies">Case Studies</a>
                 <a href="#education">Education</a>
@@ -538,8 +589,45 @@
         </div>
     </section>
 
+    <!-- Recommendations -->
+    <section id="recommendations" style="background-color: var(--bg-card);">
+        <div class="container">
+            <h2 class="section-title">Professional Recommendations</h2>
+            <p class="section-subtitle">Endorsements from senior analysts, technical managers, and academic leaders.</p>
+
+            <div class="rec-grid">
+                <div class="rec-card">
+                    <p class="rec-quote">"Jaina displayed outstanding knowledge of the business, expertise in the craft, and motivation to provide high-quality work in a fast-paced environment with minimal guidance and direction... Jaina is well-spoken and articulate; exemplifying such highly-desired qualities in a candidate."</p>
+                    <div class="rec-author">
+                        <div class="rec-name">James Rosensteel</div>
+                        <div class="rec-title">Senior Business Analyst</div>
+                        <div class="rec-relationship">Worked together at Patient Advocate Foundation</div>
+                    </div>
+                </div>
+
+                <div class="rec-card">
+                    <p class="rec-quote">"Jaina not only took on a major role in assisting with service management within the team in understanding IT workflow and processes, she actively sought out learning opportunities to improve her technical skill level across multiple disciplines... assisting in coordinating and communicating directly with multiple development teams."</p>
+                    <div class="rec-author">
+                        <div class="rec-name">Stanley Fu</div>
+                        <div class="rec-title">IT Manager - Platform Engineering & Ops</div>
+                        <div class="rec-relationship">Senior to Jaina at Blizzard Entertainment</div>
+                    </div>
+                </div>
+
+                <div class="rec-card">
+                    <p class="rec-quote">"I came to recognize Jaina as a gifted student who possessed maturity, exceptional business intellect, and a keen interest in the topics of technology, business analysis, and agile methodologies... She demonstrated exceptional intelligence, enthusiasm, and motivation to learn."</p>
+                    <div class="rec-author">
+                        <div class="rec-name">Simon Cleveland, Ph.D.</div>
+                        <div class="rec-title">Educator & Author</div>
+                        <div class="rec-relationship">Instructor for Technical Projects Planning & Scheduling, Northeastern University</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Methodological Artifacts & Visual Proof -->
-    <section id="frameworks" style="background-color: var(--bg-card);">
+    <section id="frameworks">
         <div class="container">
             <h2 class="section-title">Methodology & Visual Artifacts</h2>
             <p class="section-subtitle">Sample frameworks illustrating structured discovery, analysis, and execution planning.</p>
@@ -661,7 +749,7 @@
     </section>
 
     <!-- Anonymized Enterprise Case Studies -->
-    <section id="case-studies">
+    <section id="case-studies" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Enterprise Case Studies</h2>
             <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
@@ -738,7 +826,7 @@
     </section>
 
     <!-- Academic Foundation -->
-    <section id="education" style="background-color: var(--bg-card);">
+    <section id="education">
         <div class="container">
             <h2 class="section-title">Academic & Technical Foundation</h2>
             <p class="section-subtitle">Grounded in business information systems with advanced graduate emphasis on IT project leadership.</p>
