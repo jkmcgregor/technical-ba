@@ -18,26 +18,22 @@
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --radius: 8px;
         }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
         }
-
         .container {
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
-
         /* Header / Nav */
         header {
             background-color: var(--bg-card);
@@ -46,26 +42,22 @@
             top: 0;
             z-index: 100;
         }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 70px;
         }
-
         .brand {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
         }
-
         .brand span {
             color: var(--accent);
             font-weight: 400;
         }
-
         nav a {
             color: var(--text-muted);
             text-decoration: none;
@@ -74,22 +66,18 @@
             font-size: 0.95rem;
             transition: color 0.2s;
         }
-
         nav a:hover {
             color: var(--accent);
         }
-
         /* Full-Width Hero Section */
         .hero {
             padding: 4rem 0 3.5rem 0;
             background-color: var(--bg-card);
             border-bottom: 1px solid var(--border);
         }
-
         .hero-full {
             width: 100%;
         }
-
         .hero h1 {
             font-size: 2.75rem;
             color: var(--primary);
@@ -98,7 +86,6 @@
             font-weight: 800;
             letter-spacing: -0.02em;
         }
-
         .hero p {
             font-size: 1.15rem;
             color: var(--text-muted);
@@ -106,14 +93,12 @@
             max-width: 100%;
             line-height: 1.7;
         }
-
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.6rem;
             margin-bottom: 2rem;
         }
-
         .tag {
             background-color: var(--accent-soft);
             color: var(--accent);
@@ -122,7 +107,6 @@
             font-size: 0.875rem;
             font-weight: 600;
         }
-
         .hero-banner {
             background: var(--bg-main);
             border: 1px solid var(--border);
@@ -130,44 +114,37 @@
             padding: 1.25rem 1.5rem;
             border-radius: 0 var(--radius) var(--radius) 0;
         }
-
         .hero-banner h3 {
             font-size: 1.05rem;
             color: var(--primary);
             margin-bottom: 0.25rem;
         }
-
         .hero-banner p {
             font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 0;
         }
-
         /* Section Layout */
         section {
             padding: 3.5rem 0;
             border-bottom: 1px solid var(--border);
         }
-
         .section-title {
             font-size: 1.75rem;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
-
         .section-subtitle {
             color: var(--text-muted);
             margin-bottom: 2rem;
             font-size: 1.05rem;
         }
-
         /* Competency Matrix */
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-
         .card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -175,7 +152,6 @@
             padding: 1.5rem;
             box-shadow: var(--shadow);
         }
-
         .card h3 {
             color: var(--primary);
             margin-bottom: 0.75rem;
@@ -184,11 +160,9 @@
             align-items: center;
             gap: 0.5rem;
         }
-
         .card ul {
             list-style: none;
         }
-
         .card li {
             position: relative;
             padding-left: 1.25rem;
@@ -196,7 +170,6 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-
         .card li::before {
             content: "•";
             position: absolute;
@@ -204,14 +177,12 @@
             color: var(--accent);
             font-weight: bold;
         }
-
         /* Recommendations Styling */
         .rec-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
         }
-
         .rec-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -222,7 +193,6 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
         .rec-quote {
             font-size: 0.95rem;
             color: var(--text-muted);
@@ -231,30 +201,25 @@
             margin-bottom: 1.5rem;
             position: relative;
         }
-
         .rec-author {
             border-top: 1px solid var(--border);
             padding-top: 1rem;
         }
-
         .rec-name {
             font-weight: 700;
             font-size: 1rem;
             color: var(--primary);
         }
-
         .rec-title {
             font-size: 0.85rem;
             color: var(--accent);
             font-weight: 600;
         }
-
         .rec-relationship {
             font-size: 0.8rem;
             color: var(--text-muted);
             margin-top: 0.2rem;
         }
-
         /* BPMN Card Component Styling */
         .artifact-card {
             background: #ffffff;
@@ -265,24 +230,20 @@
             margin-bottom: 2rem;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-
         .artifact-header {
             margin-bottom: 1.25rem;
         }
-
         .artifact-title {
             margin: 0 0 0.35rem 0;
             font-size: 1.15rem;
             font-weight: 700;
             color: #0f172a;
         }
-
         .artifact-sub {
             margin: 0;
             font-size: 0.875rem;
             color: #64748b;
         }
-
         .bpmn-container {
             background: #f8fafc;
             border: 1px solid #e2e8f0;
@@ -290,13 +251,11 @@
             padding: 1.25rem;
             overflow-x: auto;
         }
-
         .bpmn-toggle {
             display: flex;
             gap: 0.5rem;
             margin-bottom: 1.25rem;
         }
-
         .toggle-btn {
             padding: 0.5rem 1rem;
             border: 1px solid #cbd5e1;
@@ -308,28 +267,23 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-
         .toggle-btn:hover {
             background: #f1f5f9;
         }
-
         .toggle-btn.active {
             background: #2563eb;
             color: #ffffff;
             border-color: #2563eb;
         }
-
         .flow-wrapper {
             display: none;
             align-items: center;
             gap: 0.75rem;
             min-width: 700px;
         }
-
         .flow-wrapper.active {
             display: flex;
         }
-
         .flow-step {
             background: #ffffff;
             border: 1px solid #cbd5e1;
@@ -341,48 +295,40 @@
             min-width: 120px;
             text-align: center;
         }
-
         .flow-step.start-node,
         .flow-step.end-node {
             font-weight: bold;
             padding: 0.5rem 0.75rem;
         }
-
         .flow-step.error {
             background: #fef2f2;
             border-color: #fca5a5;
             color: #991b1b;
         }
-
         .flow-step.success {
             background: #f0fdf4;
             border-color: #86efac;
             color: #166534;
         }
-
         .flow-step.highlight {
             background: #eff6ff;
             border-color: #93c5fd;
         }
-
         .step-title {
             font-size: 0.85rem;
             font-weight: 600;
             color: #0f172a;
         }
-
         .step-sub {
             font-size: 0.75rem;
             color: #64748b;
             margin-top: 0.25rem;
         }
-
         .flow-arrow {
             color: #94a3b8;
             font-weight: bold;
             font-size: 1.1rem;
         }
-
         /* Table Styling */
         .table-responsive {
             width: 100%;
@@ -392,14 +338,12 @@
             border-radius: var(--radius);
             box-shadow: var(--shadow);
         }
-
         table {
             width: 100%;
             border-collapse: collapse;
             text-align: left;
             font-size: 0.9rem;
         }
-
         th {
             background-color: #f1f5f9;
             color: var(--primary);
@@ -407,17 +351,14 @@
             font-weight: 600;
             border-bottom: 2px solid var(--border);
         }
-
         td {
             padding: 0.75rem 1rem;
             border-bottom: 1px solid var(--border);
             color: var(--text-muted);
         }
-
         tr:last-child td {
             border-bottom: none;
         }
-
         /* Case Studies */
         .case-study {
             background: var(--bg-card);
@@ -427,7 +368,6 @@
             margin-bottom: 1.5rem;
             box-shadow: var(--shadow);
         }
-
         .case-header {
             display: flex;
             justify-content: space-between;
@@ -436,13 +376,11 @@
             flex-wrap: wrap;
             gap: 0.5rem;
         }
-
         .case-title {
             font-size: 1.25rem;
             color: var(--primary);
             font-weight: 700;
         }
-
         .case-badge {
             background: #f1f5f9;
             color: var(--primary-light);
@@ -451,14 +389,12 @@
             font-size: 0.8rem;
             font-weight: 600;
         }
-
         .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1rem;
             margin-top: 1rem;
         }
-
         .case-block h5 {
             color: var(--primary);
             font-size: 0.9rem;
@@ -466,19 +402,16 @@
             letter-spacing: 0.5px;
             margin-bottom: 0.25rem;
         }
-
         .case-block p {
             font-size: 0.95rem;
             color: var(--text-muted);
         }
-
         /* Education & Footer */
         .edu-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
-
         footer {
             background: var(--primary);
             color: white;
@@ -486,12 +419,10 @@
             text-align: center;
             font-size: 0.9rem;
         }
-
         footer a {
             color: #93c5fd;
             text-decoration: none;
         }
-
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -510,7 +441,6 @@
     </style>
 </head>
 <body>
-
     <header>
         <div class="container nav-container">
             <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
@@ -523,7 +453,6 @@
             </nav>
         </div>
     </header>
-
     <div class="hero">
         <div class="container">
             <div class="hero-full">
@@ -543,7 +472,6 @@
             </div>
         </div>
     </div>
-
     <section id="competencies">
         <div class="container">
             <h2 class="section-title">Core Competencies</h2>
@@ -560,7 +488,6 @@
                         <li>Gap Analysis & Feasibility Studies</li>
                     </ul>
                 </div>
-
                 <div class="card">
                     <h3>SDLC & Delivery Management</h3>
                     <ul>
@@ -571,7 +498,6 @@
                         <li>Release Readiness & Cutover Strategy</li>
                     </ul>
                 </div>
-
                 <div class="card">
                     <h3>Technical Systems Analysis</h3>
                     <ul>
@@ -585,12 +511,10 @@
             </div>
         </div>
     </section>
-
     <section id="recommendations" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Professional Recommendations</h2>
             <p class="section-subtitle">Endorsements from senior analysts, technical managers, and academic leaders.</p>
-
             <div class="rec-grid">
                 <div class="rec-card">
                     <p class="rec-quote">"Jaina displayed outstanding knowledge of the business, expertise in the craft, and motivation to provide high-quality work in a fast-paced environment with minimal guidance and direction... Jaina is well-spoken and articulate; exemplifying such highly-desired qualities in a candidate."</p>
@@ -600,7 +524,6 @@
                         <div class="rec-relationship">Worked together at Blizzard Entertainment</div>
                     </div>
                 </div>
-
                 <div class="rec-card">
                     <p class="rec-quote">"Jaina not only took on a major role in assisting with service management within the team in understanding IT workflow and processes, she actively sought out learning opportunities to improve her technical skill level across multiple disciplines... assisting in coordinating and communicating directly with multiple development teams."</p>
                     <div class="rec-author">
@@ -609,7 +532,6 @@
                         <div class="rec-relationship">Senior to Jaina at Blizzard Entertainment</div>
                     </div>
                 </div>
-
                 <div class="rec-card">
                     <p class="rec-quote">"I came to recognize Jaina as a gifted student who possessed maturity, exceptional business intellect, and a keen interest in the topics of technology, business analysis, and agile methodologies... She demonstrated exceptional intelligence, enthusiasm, and motivation to learn."</p>
                     <div class="rec-author">
@@ -621,24 +543,20 @@
             </div>
         </div>
     </section>
-
     <section id="frameworks">
         <div class="container">
             <h2 class="section-title">Methodology & Visual Artifacts</h2>
             <p class="section-subtitle">Sample frameworks illustrating structured discovery, analysis, and execution planning.</p>
-
             <div class="artifact-card">
                 <div class="artifact-header">
                     <h3 class="artifact-title">Sample Artifact 1: As-Is vs. To-Be Automated Intake Architecture (BPMN 2.0)</h3>
                     <p class="artifact-sub">Demonstrating how manual intake bottlenecks are restructured into API-driven automated processing queues.</p>
                 </div>
-
                 <div class="bpmn-container">
                     <div class="bpmn-toggle">
                         <button id="btn-asis" class="toggle-btn active" onclick="switchBPMNState('asis')">As-Is Process (Manual)</button>
                         <button id="btn-tobe" class="toggle-btn" onclick="switchBPMNState('tobe')">To-Be Process (Automated)</button>
                     </div>
-
                     <div id="flow-asis" class="flow-wrapper active">
                         <div class="flow-step start-node error">Start</div>
                         <div class="flow-arrow">→</div>
@@ -662,7 +580,6 @@
                             <span class="step-sub">High Bottleneck</span>
                         </div>
                     </div>
-
                     <div id="flow-tobe" class="flow-wrapper">
                         <div class="flow-step start-node success">Start</div>
                         <div class="flow-arrow">→</div>
@@ -688,7 +605,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="artifact-card" style="margin-bottom: 0;">
                 <div class="artifact-header">
                     <h3 class="artifact-title">Sample Artifact 2: Requirements Traceability Matrix (RTM) Structure</h3>
@@ -737,12 +653,10 @@
             </div>
         </div>
     </section>
-
     <section id="case-studies" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Enterprise Case Studies</h2>
             <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
-
             <div class="case-study">
                 <div class="case-header">
                     <div class="case-title">Enterprise HRIS & Payroll Platform Migration</div>
@@ -764,7 +678,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="case-study">
                 <div class="case-header">
                     <div class="case-title">Complex Cadence & Third-Party API Integration Rollout</div>
@@ -786,7 +699,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="case-study">
                 <div class="case-header">
                     <div class="case-title">Municipal / Public Sector Business Process Re-Engineering</div>
@@ -810,12 +722,10 @@
             </div>
         </div>
     </section>
-
     <section id="education">
         <div class="container">
             <h2 class="section-title">Academic & Technical Foundation</h2>
             <p class="section-subtitle">Grounded in business information systems with advanced graduate emphasis on IT project leadership.</p>
-
             <div class="edu-grid">
                 <div class="card">
                     <h3>Graduate Education</h3>
@@ -824,7 +734,6 @@
                     <p style="font-size: 0.85rem; color: var(--text-muted);">Northeastern University</p>
                     <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: SDLC Frameworks, Waterfall vs. Agile Methodologies, Enterprise Project Execution, & Team Leadership.</em></p>
                 </div>
-
                 <div class="card">
                     <h3>Undergraduate Education</h3>
                     <p style="font-weight: 600; color: var(--primary);">B.S. in Business Information Systems</p>
@@ -835,20 +744,17 @@
             </div>
         </div>
     </section>
-
     <footer>
         <div class="container">
-            <p>&copy; 2026 Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+            <p>&copy; <span id="copyrightYear"></span> Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
         </div>
     </footer>
-
     <script>
         function switchBPMNState(state) {
             const asIsFlow = document.getElementById('flow-asis');
             const toBeFlow = document.getElementById('flow-tobe');
             const btnAsIs = document.getElementById('btn-asis');
             const btnToBe = document.getElementById('btn-tobe');
-
             if (state === 'asis') {
                 asIsFlow.classList.add('active');
                 toBeFlow.classList.remove('active');
@@ -861,6 +767,7 @@
                 btnAsIs.classList.remove('active');
             }
         }
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
