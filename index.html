@@ -18,22 +18,15 @@
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
             --radius: 8px;
         }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-main);
             line-height: 1.6;
         }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        
         /* Header / Nav */
         header {
             background-color: var(--bg-card);
@@ -42,401 +35,111 @@
             top: 0;
             z-index: 100;
         }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-        .brand {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        .brand span {
-            color: var(--accent);
-            font-weight: 400;
-        }
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        nav a:hover {
-            color: var(--accent);
-        }
-        /* Full-Width Hero Section */
-        .hero {
-            padding: 4rem 0 3.5rem 0;
-            background-color: var(--bg-card);
-            border-bottom: 1px solid var(--border);
-        }
-        .hero-full {
-            width: 100%;
-        }
-        .hero h1 {
-            font-size: 2.75rem;
-            color: var(--primary);
-            line-height: 1.25;
-            margin-bottom: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            max-width: 100%;
-            line-height: 1.7;
-        }
-        .hero-tags {
+        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .brand { font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
+        .brand span { color: var(--accent); font-weight: 400; }
+        nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+        nav a:hover { color: var(--accent); }
+
+        /* Hero Section */
+        .hero { padding: 4rem 0 3.5rem 0; background-color: var(--bg-card); border-bottom: 1px solid var(--border); }
+        .hero h1 { font-size: 2.75rem; color: var(--primary); line-height: 1.25; margin-bottom: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
+        .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 100%; line-height: 1.7; }
+        
+        /* Scale Ribbon */
+        .scale-ribbon {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.6rem;
+            gap: 1.5rem;
             margin-bottom: 2rem;
-        }
-        .tag {
-            background-color: var(--accent-soft);
-            color: var(--accent);
-            padding: 0.4rem 0.85rem;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-        .hero-banner {
+            padding: 1rem 1.5rem;
             background: var(--bg-main);
             border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+        .scale-item { display: flex; align-items: center; gap: 0.5rem; }
+        .scale-item::before { content: "✓"; color: var(--accent); font-weight: bold; }
+
+        /* Philosophy Box */
+        .philosophy-box {
+            background: var(--accent-soft);
             border-left: 4px solid var(--accent);
-            padding: 1.25rem 1.5rem;
+            padding: 1.5rem;
             border-radius: 0 var(--radius) var(--radius) 0;
-        }
-        .hero-banner h3 {
-            font-size: 1.05rem;
-            color: var(--primary);
-            margin-bottom: 0.25rem;
-        }
-        .hero-banner p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 0;
-        }
-        /* Section Layout */
-        section {
-            padding: 3.5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .section-title {
-            font-size: 1.75rem;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        .section-subtitle {
-            color: var(--text-muted);
             margin-bottom: 2rem;
-            font-size: 1.05rem;
         }
-        /* Competency Matrix */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        .card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
+        .philosophy-box h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .philosophy-box p { font-size: 1rem; color: var(--primary); margin: 0; font-weight: 500; }
+
+        /* Sections */
+        section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+        .section-title { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.5rem; }
+        .section-subtitle { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
+        
+        /* Grids & Cards */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
+        .card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.15rem; }
+        .card ul { list-style: none; }
+        .card li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
+        .card li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        
+        /* Tech Stack Labels */
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+        .tech-tag { background: #f1f5f9; color: #334155; padding: 0.3rem 0.7rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; border: 1px solid #e2e8f0; }
+
+        /* Recommendations */
+        .rec-card { display: flex; flex-direction: column; justify-content: space-between; }
+        .rec-quote { font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem; }
+        .rec-author { border-top: 1px solid var(--border); padding-top: 1rem; }
+        .rec-name { font-weight: 700; color: var(--primary); }
+        .rec-title { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
+
+        /* Downloadable Artifacts */
+        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .download-card {
+            background: var(--bg-main);
+            border: 1px dashed #94a3b8;
             border-radius: var(--radius);
             padding: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-            font-size: 1.15rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        .card ul {
-            list-style: none;
-        }
-        .card li {
-            position: relative;
-            padding-left: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-        .card li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        /* Recommendations Styling */
-        .rec-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-        .rec-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.75rem;
-            box-shadow: var(--shadow);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .rec-quote {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-style: italic;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-        .rec-author {
-            border-top: 1px solid var(--border);
-            padding-top: 1rem;
-        }
-        .rec-name {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--primary);
-        }
-        .rec-title {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-        .rec-relationship {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-        }
-        /* BPMN Card Component Styling */
-        .artifact-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-        .artifact-header {
-            margin-bottom: 1.25rem;
-        }
-        .artifact-title {
-            margin: 0 0 0.35rem 0;
-            font-size: 1.15rem;
-            font-weight: 700;
-            color: #0f172a;
-        }
-        .artifact-sub {
-            margin: 0;
-            font-size: 0.875rem;
-            color: #64748b;
-        }
-        .bpmn-container {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1.25rem;
-            overflow-x: auto;
-        }
-        .bpmn-toggle {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1.25rem;
-        }
-        .toggle-btn {
-            padding: 0.5rem 1rem;
-            border: 1px solid #cbd5e1;
-            background: #ffffff;
-            color: #475569;
-            font-weight: 600;
-            font-size: 0.85rem;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-        .toggle-btn:hover {
-            background: #f1f5f9;
-        }
-        .toggle-btn.active {
-            background: #2563eb;
-            color: #ffffff;
-            border-color: #2563eb;
-        }
-        .flow-wrapper {
-            display: none;
-            align-items: center;
-            gap: 0.75rem;
-            min-width: 700px;
-        }
-        .flow-wrapper.active {
-            display: flex;
-        }
-        .flow-step {
-            background: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 0.75rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            min-width: 120px;
             text-align: center;
+            transition: all 0.2s;
         }
-        .flow-step.start-node,
-        .flow-step.end-node {
-            font-weight: bold;
-            padding: 0.5rem 0.75rem;
-        }
-        .flow-step.error {
-            background: #fef2f2;
-            border-color: #fca5a5;
-            color: #991b1b;
-        }
-        .flow-step.success {
-            background: #f0fdf4;
-            border-color: #86efac;
-            color: #166534;
-        }
-        .flow-step.highlight {
-            background: #eff6ff;
-            border-color: #93c5fd;
-        }
-        .step-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #0f172a;
-        }
-        .step-sub {
-            font-size: 0.75rem;
-            color: #64748b;
-            margin-top: 0.25rem;
-        }
-        .flow-arrow {
-            color: #94a3b8;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-        /* Table Styling */
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.9rem;
-        }
-        th {
-            background-color: #f1f5f9;
-            color: var(--primary);
-            padding: 0.75rem 1rem;
-            font-weight: 600;
-            border-bottom: 2px solid var(--border);
-        }
-        td {
-            padding: 0.75rem 1rem;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-muted);
-        }
-        tr:last-child td {
-            border-bottom: none;
-        }
-        /* Case Studies */
-        .case-study {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: var(--shadow);
-        }
-        .case-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .case-title {
-            font-size: 1.25rem;
-            color: var(--primary);
-            font-weight: 700;
-        }
-        .case-badge {
-            background: #f1f5f9;
-            color: var(--primary-light);
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        .case-block h5 {
-            color: var(--primary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.25rem;
-        }
-        .case-block p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-        /* Education & Footer */
-        .edu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        footer {
-            background: var(--primary);
+        .download-card:hover { border-color: var(--accent); background: #f8fafc; }
+        .btn-download {
+            display: inline-block;
+            background: var(--accent);
             color: white;
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-        footer a {
-            color: #93c5fd;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
             text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            transition: background 0.2s;
         }
+        .btn-download:hover { background: #1d4ed8; }
+
+        /* Case Studies */
+        .case-study { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); }
+        .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+        .case-title { font-size: 1.25rem; color: var(--primary); font-weight: 700; }
+        .case-badge { background: #f1f5f9; color: var(--primary-light); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
+        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
+        .case-block h5 { color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
+        .case-block p { font-size: 0.95rem; color: var(--text-muted); }
+
+        /* Footer */
+        footer { background: var(--primary); color: white; padding: 2rem 0; text-align: center; font-size: 0.9rem; }
+        footer a { color: #93c5fd; text-decoration: none; }
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .nav-container {
-                flex-direction: column;
-                justify-content: center;
-                gap: 0.5rem;
-                height: auto;
-                padding: 1rem 0;
-            }
-            nav a {
-                margin: 0 0.5rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            .nav-container { flex-direction: column; justify-content: center; gap: 0.5rem; height: auto; padding: 1rem 0; }
+            nav a { margin: 0 0.5rem; }
         }
     </style>
 </head>
@@ -445,329 +148,204 @@
         <div class="container nav-container">
             <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
             <nav>
-                <a href="#competencies">Competencies</a>
-                <a href="#recommendations">Recommendations</a>
-                <a href="#frameworks">Methodology</a>
+                <a href="#competencies">Capabilities</a>
+                <a href="#tools">Tech Stack</a>
+                <a href="#artifacts">Methodology</a>
                 <a href="#case-studies">Case Studies</a>
-                <a href="#education">Education</a>
             </nav>
         </div>
     </header>
+
     <div class="hero">
         <div class="container">
             <div class="hero-full">
                 <h1>Translating Complex Business Needs into Technical Execution</h1>
-                <p>Senior IT Business Analyst and Project Manager with over a decade of experience orchestrating enterprise system integrations, streamlining operational workflows, and delivering structured SDLC governance across cross-functional teams.</p>
-                <div class="hero-tags">
-                    <span class="tag">Systems Architecture & Design</span>
-                    <span class="tag">Agile / Waterfall Governance</span>
-                    <span class="tag">Process Engineering (BPMN)</span>
-                    <span class="tag">Enterprise Integration</span>
-                    <span class="tag">Requirements Engineering</span>
+                
+                <div class="scale-ribbon">
+                    <span class="scale-item">10+ Years Enterprise Experience</span>
+                    <span class="scale-item">AAA Gaming, Fortune 500, & Public Sector</span>
+                    <span class="scale-item">API Integrations & SQL Data Modeling</span>
+                    <span class="scale-item">ERP / HRIS / ATS Migrations</span>
                 </div>
-                <div class="hero-banner">
-                    <h3>Technical & Strategic Leadership</h3>
-                    <p>Specializing in complex system rollouts, ERP lifecycle management, and API/SQL-driven process automation.</p>
+
+                <p>Senior IT Business Analyst and Project Manager specializing in complex system rollouts, ERP/HRIS lifecycle management, and workflow automation. Proven track record of orchestrating enterprise integrations and delivering structured SDLC governance across cross-functional engineering and business teams.</p>
+                
+                <div class="philosophy-box">
+                    <h3>Bridging the Gap: Stakeholder Management Philosophy</h3>
+                    <p>"Successful technical delivery requires more than gathering requirements; it requires rigorous expectation management. I specialize in translating highly technical constraints into business realities, securing executive buy-in, and protecting engineering bandwidth from scope creep."</p>
                 </div>
             </div>
         </div>
     </div>
-    <section id="competencies">
+
+    <section id="tools">
         <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">A balanced approach pairing functional process discovery with deep technical execution.</p>
+            <h2 class="section-title">Technical Toolbox</h2>
+            <p class="section-subtitle">Platforms, databases, and governance tools utilized in daily enterprise delivery.</p>
             
             <div class="grid-3">
                 <div class="card">
-                    <h3>Requirements Engineering</h3>
-                    <ul>
-                        <li>Business Requirements Documents (BRD / FRD)</li>
-                        <li>User Story Mapping & Acceptance Criteria (Gherkin)</li>
-                        <li>Requirements Traceability Matrices (RTM)</li>
-                        <li>As-Is vs. To-Be Business Process Mapping</li>
-                        <li>Gap Analysis & Feasibility Studies</li>
-                    </ul>
+                    <h3>Data & Architecture</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Microsoft SQL Server</span>
+                        <span class="tech-tag">Oracle SQL Developer</span>
+                        <span class="tech-tag">Postman (API Testing)</span>
+                        <span class="tech-tag">JSON / REST Payloads</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>SDLC & Delivery Management</h3>
-                    <ul>
-                        <li>Agile / Scrum & Waterfall Methodologies</li>
-                        <li>Cross-Functional Team & Vendor Coordination</li>
-                        <li>UAT Planning, Execution, & Defect Tracking</li>
-                        <li>Scope Governance & Change Control</li>
-                        <li>Release Readiness & Cutover Strategy</li>
-                    </ul>
+                    <h3>Enterprise Systems</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Salesforce</span>
+                        <span class="tech-tag">PeopleSoft (Public Sector)</span>
+                        <span class="tech-tag">Enterprise ERPs (CargoWise)</span>
+                        <span class="tech-tag">Docker / GitHub</span>
+                    </div>
                 </div>
                 <div class="card">
-                    <h3>Technical Systems Analysis</h3>
-                    <ul>
-                        <li>Data Flow Diagrams (DFD) & ERD Visualization</li>
-                        <li>API Payload Analysis & Integration Mapping</li>
-                        <li>SQL Queries & Data Validation Testing</li>
-                        <li>Enterprise Software (ERP, HRIS, Financials)</li>
-                        <li>System Topology & Sequence Diagrams</li>
-                    </ul>
+                    <h3>Methodology & Mapping</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Jira / Confluence</span>
+                        <span class="tech-tag">Visio / Lucidchart</span>
+                        <span class="tech-tag">Microsoft Project</span>
+                        <span class="tech-tag">Wrike</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="recommendations" style="background-color: var(--bg-card);">
+
+    <section id="artifacts" style="background-color: var(--bg-card);">
         <div class="container">
-            <h2 class="section-title">Professional Recommendations</h2>
-            <p class="section-subtitle">Endorsements from senior analysts, technical managers, and academic leaders.</p>
-            <div class="rec-grid">
-                <div class="rec-card">
-                    <p class="rec-quote">"Jaina displayed outstanding knowledge of the business, expertise in the craft, and motivation to provide high-quality work in a fast-paced environment with minimal guidance and direction... Jaina is well-spoken and articulate; exemplifying such highly-desired qualities in a candidate."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">James Rosensteel</div>
-                        <div class="rec-title">Senior Business Analyst</div>
-                        <div class="rec-relationship">Worked together at Blizzard Entertainment</div>
-                    </div>
+            <h2 class="section-title">Methodology & Execution Artifacts</h2>
+            <p class="section-subtitle">Sanitized, real-world examples demonstrating documentation structure and technical depth.</p>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">API Data Mapping Sheet</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Schema validation, database targeting, and error handling rules for JSON payloads.</p>
+                    <a href="API_Data_Mapping_Sample.pdf" target="_blank" class="btn-download">Download PDF</a>
                 </div>
-                <div class="rec-card">
-                    <p class="rec-quote">"Jaina not only took on a major role in assisting with service management within the team in understanding IT workflow and processes, she actively sought out learning opportunities to improve her technical skill level across multiple disciplines... assisting in coordinating and communicating directly with multiple development teams."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">Stanley Fu</div>
-                        <div class="rec-title">IT Manager - Platform Engineering & Ops</div>
-                        <div class="rec-relationship">Senior to Jaina at Blizzard Entertainment</div>
-                    </div>
+                <div class="download-card">
+                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">User Story & Acceptance Matrix</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Structured Gherkin scenarios linking business intent directly to UAT execution.</p>
+                    <a href="User_Story_Matrix_Sample.pdf" target="_blank" class="btn-download">Download PDF</a>
                 </div>
-                <div class="rec-card">
-                    <p class="rec-quote">"I came to recognize Jaina as a gifted student who possessed maturity, exceptional business intellect, and a keen interest in the topics of technology, business analysis, and agile methodologies... She demonstrated exceptional intelligence, enthusiasm, and motivation to learn."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">Simon Cleveland, Ph.D.</div>
-                        <div class="rec-title">Educator & Author</div>
-                        <div class="rec-relationship">Graduate Program Instructor at Northeastern University</div>
-                    </div>
+                <div class="download-card">
+                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">BRD Discovery Excerpt</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Executive summary, scope governance, and high-level requirements for enterprise vendors.</p>
+                    <a href="BRD_Excerpt_Sample.pdf" target="_blank" class="btn-download">Download PDF</a>
                 </div>
             </div>
         </div>
     </section>
-    <section id="frameworks">
-        <div class="container">
-            <h2 class="section-title">Methodology & Visual Artifacts</h2>
-            <p class="section-subtitle">Sample frameworks illustrating structured discovery, analysis, and execution planning.</p>
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h3 class="artifact-title">Sample Artifact 1: As-Is vs. To-Be Automated Intake Architecture (BPMN 2.0)</h3>
-                    <p class="artifact-sub">Demonstrating how manual intake bottlenecks are restructured into API-driven automated processing queues.</p>
-                </div>
-                <div class="bpmn-container">
-                    <div class="bpmn-toggle">
-                        <button id="btn-asis" class="toggle-btn active" onclick="switchBPMNState('asis')">As-Is Process (Manual)</button>
-                        <button id="btn-tobe" class="toggle-btn" onclick="switchBPMNState('tobe')">To-Be Process (Automated)</button>
-                    </div>
-                    <div id="flow-asis" class="flow-wrapper active">
-                        <div class="flow-step start-node error">Start</div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step">
-                            <span class="step-title">Manual Email Entry</span>
-                            <span class="step-sub">Unstructured Data</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step">
-                            <span class="step-title">Spreadsheet Logging</span>
-                            <span class="step-sub">Human Error Risk</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step decision-node">
-                            <span class="step-title">Manual Review</span>
-                            <span class="step-sub">Manager Approval</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step end-node error">
-                            <span class="step-title">3–5 Day Backlog</span>
-                            <span class="step-sub">High Bottleneck</span>
-                        </div>
-                    </div>
-                    <div id="flow-tobe" class="flow-wrapper">
-                        <div class="flow-step start-node success">Start</div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight">
-                            <span class="step-title">Webhook Intake</span>
-                            <span class="step-sub">JSON Payload</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight">
-                            <span class="step-title">Validation & Schema Check</span>
-                            <span class="step-sub">Automated Rule Engine</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight">
-                            <span class="step-title">Automated Routing</span>
-                            <span class="step-sub">ERP/Database Push</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step end-node success">
-                            <span class="step-title">Instant Execution</span>
-                            <span class="step-sub">&lt; 1s Latency</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="artifact-card" style="margin-bottom: 0;">
-                <div class="artifact-header">
-                    <h3 class="artifact-title">Sample Artifact 2: Requirements Traceability Matrix (RTM) Structure</h3>
-                    <p class="artifact-sub">Maintaining complete line-of-sight from high-level business goals down to UAT test execution.</p>
-                </div>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Req ID</th>
-                                <th>Business Objective</th>
-                                <th>Functional Requirement</th>
-                                <th>System Component</th>
-                                <th>User Story ID</th>
-                                <th>UAT Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>BRD-01</strong></td>
-                                <td>Reduce customer onboarding time by 50%</td>
-                                <td>System must validate payload data asynchronously via API</td>
-                                <td>Integration Middleware</td>
-                                <td>US-102</td>
-                                <td><span style="color: #16a34a; font-weight: bold;">Passed</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>BRD-02</strong></td>
-                                <td>Ensure audit compliance for user access</td>
-                                <td>Role-based access logs must persist for 7 years</td>
-                                <td>Security / IAM Module</td>
-                                <td>US-204</td>
-                                <td><span style="color: #16a34a; font-weight: bold;">Passed</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>BRD-03</strong></td>
-                                <td>Automate error alerting for failed syncing</td>
-                                <td>Trigger webhook notification on 5xx status codes</td>
-                                <td>Notification Service</td>
-                                <td>US-305</td>
-                                <td><span style="color: #2563eb; font-weight: bold;">In Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="case-studies" style="background-color: var(--bg-card);">
+
+    <section id="case-studies">
         <div class="container">
             <h2 class="section-title">Enterprise Case Studies</h2>
             <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
+            
             <div class="case-study">
                 <div class="case-header">
-                    <div class="case-title">PeopleSoft SQL Custom Report Audit & T&E Workflow Optimization</div>
-                    <span class="case-badge">ERP Business Process & SQL Analysis</span>
+                    <div class="case-title">Enterprise ATS Vendor Evaluation & Strategy</div>
+                    <span class="case-badge">Blizzard Entertainment</span>
                 </div>
-                <p>Evaluated administrative workflows and diagnostic reporting for PeopleSoft Travel & Expense (T&E) and ELM modules at the City of Albuquerque.</p>
+                <p>Led a specialized 3-month discovery initiative to evaluate Applicant Tracking Systems (ATS) and align platform capabilities with highly specific AAA gaming recruitment workflows.</p>
                 <div class="case-grid">
                     <div class="case-block">
                         <h5>The Challenge</h5>
-                        <p>Data abnormalities in reporting outputs caused confusion, driven by proprietary PeopleSoft custom report functions that stripped specific records from consideration.</p>
+                        <p>The organization required a comprehensive technical and functional assessment of available ATS platforms within a strict timeframe prior to implementation handoff.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Analytical Approach</h5>
-                        <p>Extensively utilized advanced SQL queries and performed comparative query debugging between PeopleSoft custom reports and Oracle SQL Developer to isolate forced logic gaps.</p>
+                        <p>Conducted deep-dive evaluations of multiple systems against internal requirements. Synthesized findings into a comparative matrix to identify optimal solutions.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Outcome</h5>
-                        <p>Streamlined T&E operational workflows and provided accurate technical data diagnostics for enterprise stakeholders, ensuring transparent reporting outputs.</p>
+                        <p>Delivered a finalized top-three vendor recommendation and transition roadmap. The enterprise successfully adopted and deployed one of the recommended platforms.</p>
                     </div>
                 </div>
             </div>
+
             <div class="case-study">
                 <div class="case-header">
-                    <div class="case-title">Enterprise Applicant Tracking System (ATS) Vendor Evaluation</div>
-                    <span class="case-badge">Requirements Analysis & Vendor Selection</span>
+                    <div class="case-title">Financial Process Optimization & Data Integrity Auditing</div>
+                    <span class="case-badge">City of Albuquerque</span>
                 </div>
-                <p>Spearheaded comprehensive requirements gathering and vendor evaluation for enterprise HR systems within a Fortune 500 gaming environment (Blizzard Entertainment).</p>
+                <p>Audited municipal Travel and Expense modules to resolve data abnormalities and streamline legacy public sector approval workflows.</p>
                 <div class="case-grid">
                     <div class="case-block">
                         <h5>The Challenge</h5>
-                        <p>The organization required a standardized evaluation framework to assess multiple complex ATS platforms against internal recruiting and compliance requirements.</p>
+                        <p>Travel and Expense workflows suffered from inefficiencies, and proprietary PeopleSoft reporting logic was silently filtering out critical financial records from standard outputs.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Analytical Approach</h5>
-                        <p>Conducted thorough feature-by-feature discovery, built functional system demos, and structured a rigorous evaluation matrix over a 3-month engagement.</p>
+                        <p>Reviewed module workflows for optimization opportunities. Executed side-by-side SQL comparisons between PeopleSoft's custom report function and Oracle SQL Developer to expose flawed forced logic.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Outcome</h5>
-                        <p>Successfully delivered a vetted top-3 vendor recommendation list and structured transition notes before hand-off—with the organization ultimately selecting one of the recommended platforms.</p>
+                        <p>Uncovered the root cause of missing data, corrected underlying SQL query structures for recurring reports, and provided actionable strategies to streamline the expense lifecycle.</p>
                     </div>
                 </div>
             </div>
+            
             <div class="case-study">
                 <div class="case-header">
-                    <div class="case-title">Enterprise SaaS API & EDI Data Transmission Integration</div>
-                    <span class="case-badge">Technical Business Analysis & Integration</span>
+                    <div class="case-title">Complex Cadence & Third-Party API Integration Rollout</div>
+                    <span class="case-badge">AutoFi / Enterprise Auto Sector</span>
                 </div>
-                <p>Managed technical client integrations, interface mapping, and anomaly troubleshooting across automotive SaaS (AutoFi) and logistics environments (Trinium / WiseTech Global).</p>
+                <p>Managed the interface architecture and operational alignment using Postman for API testing to integrate a major scheduling/cadence module into existing core operational software.</p>
                 <div class="case-grid">
                     <div class="case-block">
                         <h5>The Challenge</h5>
-                        <p>Complex data pipelines (JSON/XML/EDI) between disparate client systems and core software platforms carried high risk of transmission failure or payload rejection.</p>
+                        <p>High variability in vendor documentation created ambiguity in REST API response handling, threatening the planned deployment timeline and scope.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Analytical Approach</h5>
-                        <p>Utilized Postman, API response logs, and EDI connection monitoring tools to inspect payload structures, diagnose schema mismatches, and trace data flow bottlenecks.</p>
+                        <p>Authored detailed sequence diagrams and edge-case handling specs. Acted as primary liaison between vendor engineering leads and internal business units.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Outcome</h5>
-                        <p>Guaranteed 100% data transmission integrity across enterprise client deployments, preventing compliance risks and establishing reliable automated data feeds.</p>
+                        <p>Delivered integration milestone on schedule, established automated logging for API error handling, and reduced transaction processing times.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="education">
+
+    <section id="education" style="background-color: var(--bg-card);">
         <div class="container">
-            <h2 class="section-title">Academic & Technical Foundation</h2>
+            <h2 class="section-title">Academic & Technical Leadership</h2>
             <p class="section-subtitle">Grounded in business information systems with advanced graduate emphasis on IT project leadership.</p>
-            <div class="edu-grid">
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Academic Instruction</h3>
+                    <p style="font-weight: 600; color: var(--primary);">Adjunct IT Instructor</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">California Institute of Applied Technology (CIAT)</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Teaching CompTIA Tech+ Fundamentals (CIS100B). Mentoring future technical professionals and translating complex infrastructure concepts for adult learners.</em></p>
+                </div>
                 <div class="card">
                     <h3>Graduate Education</h3>
                     <p style="font-weight: 600; color: var(--primary);">M.S. in Leadership</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Concentration in IT Project Management</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Northeastern University[cite: 1, 2]</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: SDLC Frameworks, Waterfall vs. Agile Methodologies, Enterprise Project Execution, & Team Leadership.</em></p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Northeastern University</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Concentration in IT Project Management. Focus: SDLC Frameworks, Enterprise Project Execution, & Cross-functional Team Leadership.</em></p>
                 </div>
                 <div class="card">
                     <h3>Undergraduate Education</h3>
                     <p style="font-weight: 600; color: var(--primary);">B.S. in Business Information Systems</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">College of Business</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Oregon State University[cite: 1, 2]</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: Systems Analysis & Design, Database Management, Business Process Integration, & Enterprise Application Architecture.</em></p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted);">Oregon State University</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: Systems Analysis & Design, Database Management, SQL Architecture, & Business Process Integration.</em></p>
                 </div>
             </div>
         </div>
     </section>
+
     <footer>
         <div class="container">
-            <p>&copy; <span id="copyrightYear"></span> Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+            <p>&copy; 2026 Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
         </div>
     </footer>
-    <script>
-        function switchBPMNState(state) {
-            const asIsFlow = document.getElementById('flow-asis');
-            const toBeFlow = document.getElementById('flow-tobe');
-            const btnAsIs = document.getElementById('btn-asis');
-            const btnToBe = document.getElementById('btn-tobe');
-            if (state === 'asis') {
-                asIsFlow.classList.add('active');
-                toBeFlow.classList.remove('active');
-                btnAsIs.classList.add('active');
-                btnToBe.classList.remove('active');
-            } else {
-                toBeFlow.classList.add('active');
-                asIsFlow.classList.remove('active');
-                btnToBe.classList.add('active');
-                btnAsIs.classList.remove('active');
-            }
-        }
-        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
