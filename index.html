@@ -1,351 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaina McGregor | Senior Business Analyst & IT Project Manager</title>
-    <style>
-        :root {
-            --primary: #1e293b;
-            --primary-light: #334155;
-            --accent: #2563eb;
-            --accent-soft: #eff6ff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --border: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --radius: 8px;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-        
-        /* Header / Nav */
-        header {
-            background-color: var(--bg-card);
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .brand { font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-        .brand span { color: var(--accent); font-weight: 400; }
-        nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
-        nav a:hover { color: var(--accent); }
+<!-- Professional Experience Section -->
+        <section>
+            <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-300 pb-2 mb-8">Professional Experience</h2>
+            <div class="space-y-10">
 
-        /* Hero Section */
-        .hero { padding: 4rem 0 3.5rem 0; background-color: var(--bg-card); border-bottom: 1px solid var(--border); }
-        .hero h1 { font-size: 2.75rem; color: var(--primary); line-height: 1.25; margin-bottom: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
-        .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 100%; line-height: 1.7; }
-        
-        /* Scale Ribbon */
-        .scale-ribbon {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding: 1rem 1.5rem;
-            background: var(--bg-main);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 0.95rem;
-        }
-        .scale-item { display: flex; align-items: center; gap: 0.5rem; }
-        .scale-item::before { content: "✓"; color: var(--accent); font-weight: bold; }
-
-        /* Philosophy Box */
-        .philosophy-box {
-            background: var(--accent-soft);
-            border-left: 4px solid var(--accent);
-            padding: 1.5rem;
-            border-radius: 0 var(--radius) var(--radius) 0;
-            margin-bottom: 2rem;
-        }
-        .philosophy-box h3 { color: var(--accent); font-size: 1.1rem; margin-bottom: 0.5rem; }
-        .philosophy-box p { font-size: 1rem; color: var(--primary); margin: 0; font-weight: 500; }
-
-        /* Sections */
-        section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
-        .section-title { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.5rem; }
-        .section-subtitle { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
-        
-        /* Grids & Cards */
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-        .card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.15rem; }
-        .card ul { list-style: none; }
-        .card li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
-        .card li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-        
-        /* Tech Stack Labels */
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
-        .tech-tag { background: #f1f5f9; color: #334155; padding: 0.3rem 0.7rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; border: 1px solid #e2e8f0; }
-
-        /* Recommendations */
-        .rec-card { display: flex; flex-direction: column; justify-content: space-between; }
-        .rec-quote { font-size: 0.95rem; color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem; }
-        .rec-author { border-top: 1px solid var(--border); padding-top: 1rem; }
-        .rec-name { font-weight: 700; color: var(--primary); }
-        .rec-title { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-
-        /* Downloadable Artifacts */
-        .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-        .download-card {
-            background: var(--bg-main);
-            border: 1px dashed #94a3b8;
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.2s;
-        }
-        .download-card:hover { border-color: var(--accent); background: #f8fafc; }
-        .btn-download {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-            transition: background 0.2s;
-        }
-        .btn-download:hover { background: #1d4ed8; }
-
-        /* Case Studies */
-        .case-study { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); }
-        .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
-        .case-title { font-size: 1.25rem; color: var(--primary); font-weight: 700; }
-        .case-badge { background: #f1f5f9; color: var(--primary-light); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
-        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .case-block h5 { color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
-        .case-block p { font-size: 0.95rem; color: var(--text-muted); }
-
-        /* Footer */
-        footer { background: var(--primary); color: white; padding: 2rem 0; text-align: center; font-size: 0.9rem; }
-        footer a { color: #93c5fd; text-decoration: none; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-container { flex-direction: column; justify-content: center; gap: 0.5rem; height: auto; padding: 1rem 0; }
-            nav a { margin: 0 0.5rem; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
-            <nav>
-                <a href="#competencies">Capabilities</a>
-                <a href="#tools">Tech Stack</a>
-                <a href="#artifacts">Methodology</a>
-                <a href="#case-studies">Case Studies</a>
-            </nav>
-        </div>
-    </header>
-
-    <div class="hero">
-        <div class="container">
-            <div class="hero-full">
-                <h1>Translating Complex Business Needs into Technical Execution</h1>
-                
-                <div class="scale-ribbon">
-                    <span class="scale-item">10+ Years Enterprise Experience</span>
-                    <span class="scale-item">AAA Gaming, Fortune 500, & Public Sector</span>
-                    <span class="scale-item">API Integrations & SQL Data Modeling</span>
-                    <span class="scale-item">ERP / HRIS / ATS Migrations</span>
+                <!-- Role 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <h3 class="text-xl font-semibold text-slate-900">Principal Consultant & Strategic Program Leader</h3>
+                        <span class="text-sm text-slate-500 font-medium">Sep 2015 – Present</span>
+                    </div>
+                    <p class="text-sm font-semibold text-blue-600 mt-1 mb-4">JAKSA Enterprises, LLC</p>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-2">
+                        <li>Directed a portfolio of high-stakes technical and operational consulting engagements across scaling enterprise environments[cite: 13].</li>
+                        <li>Transitioned legacy manual processes into scalable digital workflows to eliminate operational bottlenecks and optimize business processes[cite: 13].</li>
+                        <li>Communicated complex technical concepts and system architecture to both technical teams and non-technical executive stakeholders[cite: 13].</li>
+                    </ul>
                 </div>
 
-                <p>Senior IT Business Analyst and Project Manager specializing in complex system rollouts, ERP/HRIS lifecycle management, and workflow automation. Proven track record of orchestrating enterprise integrations and delivering structured SDLC governance across cross-functional engineering and business teams.</p>
-                
-                <div class="philosophy-box">
-                    <h3>Bridging the Gap: Stakeholder Management Philosophy</h3>
-                    <p>"Successful technical delivery requires more than gathering requirements; it requires rigorous expectation management. I specialize in translating highly technical constraints into business realities, securing executive buy-in, and protecting engineering bandwidth from scope creep."</p>
+                <!-- Role 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <h3 class="text-xl font-semibold text-slate-900">ERP Business Process Analyst II</h3>
+                        <span class="text-sm text-slate-500 font-medium">Sept 2024 – Dec 2025</span>
+                    </div>
+                    <p class="text-sm font-semibold text-blue-600 mt-1 mb-4">City of Albuquerque</p>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-2">
+                        <li>Led a 15-month engagement for PeopleSoft ELM and Travel & Expense business process transformation[cite: 13].</li>
+                        <li>Re-engineered core administrative workflows and diagnosed production defects to achieve zero downtime during critical patching cycles[cite: 13].</li>
+                        <li>Designed custom SQL queries in PeopleSoft Query Manager for high-volume financial transaction reconciliation.</li>
+                    </ul>
                 </div>
+
+                <!-- Role 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <h3 class="text-xl font-semibold text-slate-900">Technical Business Analyst</h3>
+                        <span class="text-sm text-slate-500 font-medium">Feb 2023 – Mar 2024</span>
+                    </div>
+                    <p class="text-sm font-semibold text-blue-600 mt-1 mb-4">Houlihan Lokey, Inc.</p>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-2">
+                        <li>Directed requirements gathering for enterprise IT infrastructure projects within a global investment bank[cite: 13].</li>
+                        <li>Streamlined the SDLC by managing end-to-end status tracking and traceability across SQL Server, ServiceNow, Tableau, and Salesforce[cite: 13].</li>
+                    </ul>
+                </div>
+
+                <!-- Role 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <h3 class="text-xl font-semibold text-slate-900">Enterprise Delivery Manager / Implementation Manager</h3>
+                        <span class="text-sm text-slate-500 font-medium">Nov 2021 – Jan 2023</span>
+                    </div>
+                    <p class="text-sm font-semibold text-blue-600 mt-1 mb-4">AutoFi, Inc.</p>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-2">
+                        <li>Managed technical implementations for enterprise automotive clients, including Rocket Auto, CarGurus, and TrueCar[cite: 13].</li>
+                        <li>Diagnosed API payloads using JSON and XML to ensure data transmission integrity across FinTech integrations[cite: 13].</li>
+                    </ul>
+                </div>
+
+                <!-- Role 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-slate-200">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between">
+                        <h3 class="text-xl font-semibold text-slate-900">Systems Architect & Project Manager</h3>
+                        <span class="text-sm text-slate-500 font-medium">Aug 2019 – Jun 2022</span>
+                    </div>
+                    <p class="text-sm font-semibold text-blue-600 mt-1 mb-4">WiseTech Global / Trinium Technologies</p>
+                    <ul class="list-disc list-inside text-slate-600 text-sm space-y-2">
+                        <li>Architected real-time dashboard and monitoring frameworks for Tier-1 logistics providers[cite: 13].</li>
+                        <li>Managed end-to-end EDI connection projects facilitating data exchange with enterprise retailers (Amazon, Walmart, Target)[cite: 13].</li>
+                    </ul>
+                </div>
+
             </div>
-        </div>
-    </div>
-
-    <section id="tools">
-        <div class="container">
-            <h2 class="section-title">Technical Toolbox</h2>
-            <p class="section-subtitle">Platforms, databases, and governance tools utilized in daily enterprise delivery.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Data & Architecture</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Microsoft SQL Server</span>
-                        <span class="tech-tag">Oracle SQL Developer</span>
-                        <span class="tech-tag">Postman (API Testing)</span>
-                        <span class="tech-tag">JSON / REST Payloads</span>
-                        <span class="tech-tag">Python</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Enterprise Systems</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Salesforce</span>
-                        <span class="tech-tag">PeopleSoft (Public Sector)</span>
-                        <span class="tech-tag">Enterprise ERPs (CargoWise)</span>
-                        <span class="tech-tag">Docker / GitHub</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>Methodology & Mapping</h3>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Jira / Confluence</span>
-                        <span class="tech-tag">Visio / Lucidchart</span>
-                        <span class="tech-tag">Microsoft Project</span>
-                        <span class="tech-tag">Wrike</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="artifacts" style="background-color: var(--bg-card);">
-        <div class="container">
-            <h2 class="section-title">Methodology & Execution Artifacts</h2>
-            <p class="section-subtitle">Sanitized, real-world examples demonstrating documentation structure and technical depth.</p>
-            
-            <div class="download-grid">
-                <div class="download-card">
-                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">API Data Mapping Sheet</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Schema validation, database targeting, and error handling rules for JSON payloads.</p>
-                    <a href="API_Data_Mapping_Sample.pdf" target="_blank" class="btn-download">Download PDF</a>
-                </div>
-                <div class="download-card">
-                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">User Story & Acceptance Matrix</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Structured Gherkin scenarios linking business intent directly to UAT execution.</p>
-                    <a href="User_Story_Matrix_Sample.pdf" target="_blank" class="btn-download">Download PDF</a>
-                </div>
-                <div class="download-card">
-                    <h3 style="color: var(--primary); font-size: 1.1rem; margin-bottom: 0.5rem;">BRD Discovery Excerpt</h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted);">Executive summary, scope governance, and high-level requirements for enterprise vendors.</p>
-                    <a href="BRD_Excerpt_Sample.pdf" target="_blank" class="btn-download">Download PDF</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="case-studies">
-        <div class="container">
-            <h2 class="section-title">Enterprise Case Studies</h2>
-            <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
-            
-            <div class="case-study">
-                <div class="case-header">
-                    <div class="case-title">Enterprise ATS Vendor Evaluation & Strategy</div>
-                    <span class="case-badge">Blizzard Entertainment</span>
-                </div>
-                <p>Led a specialized 3-month discovery initiative to evaluate Applicant Tracking Systems (ATS) and align platform capabilities with highly specific AAA gaming recruitment workflows.</p>
-                <div class="case-grid">
-                    <div class="case-block">
-                        <h5>The Challenge</h5>
-                        <p>The organization required a comprehensive technical and functional assessment of available ATS platforms within a strict timeframe prior to implementation handoff.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Analytical Approach</h5>
-                        <p>Conducted deep-dive evaluations of multiple systems against internal requirements. Synthesized findings into a comparative matrix to identify optimal solutions.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Outcome</h5>
-                        <p>Delivered a finalized top-three vendor recommendation and transition roadmap. The enterprise successfully adopted and deployed one of the recommended platforms.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="case-study">
-                <div class="case-header">
-                    <div class="case-title">Financial Process Optimization & Data Integrity Auditing</div>
-                    <span class="case-badge">City of Albuquerque</span>
-                </div>
-                <p>Audited municipal Travel and Expense modules to resolve data abnormalities and streamline legacy public sector approval workflows.</p>
-                <div class="case-grid">
-                    <div class="case-block">
-                        <h5>The Challenge</h5>
-                        <p>Travel and Expense workflows suffered from inefficiencies, and proprietary PeopleSoft reporting logic was silently filtering out critical financial records from standard outputs.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Analytical Approach</h5>
-                        <p>Reviewed module workflows for optimization opportunities. Executed side-by-side SQL comparisons between PeopleSoft's custom report function and Oracle SQL Developer to expose flawed forced logic.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Outcome</h5>
-                        <p>Uncovered the root cause of missing data, corrected underlying SQL query structures for recurring reports, and provided actionable strategies to streamline the expense lifecycle.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="case-study">
-                <div class="case-header">
-                    <div class="case-title">Complex Cadence & Third-Party API Integration Rollout</div>
-                    <span class="case-badge">AutoFi / Enterprise Auto Sector</span>
-                </div>
-                <p>Managed the interface architecture and operational alignment using Postman for API testing to integrate a major scheduling/cadence module into existing core operational software.</p>
-                <div class="case-grid">
-                    <div class="case-block">
-                        <h5>The Challenge</h5>
-                        <p>High variability in vendor documentation created ambiguity in REST API response handling, threatening the planned deployment timeline and scope.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Analytical Approach</h5>
-                        <p>Authored detailed sequence diagrams and edge-case handling specs. Acted as primary liaison between vendor engineering leads and internal business units.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Outcome</h5>
-                        <p>Delivered integration milestone on schedule, established automated logging for API error handling, and reduced transaction processing times.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" style="background-color: var(--bg-card);">
-        <div class="container">
-            <h2 class="section-title">Academic & Technical Leadership</h2>
-            <p class="section-subtitle">Grounded in business information systems with advanced graduate emphasis on IT project leadership.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Academic Instruction</h3>
-                    <p style="font-weight: 600; color: var(--primary);">Adjunct IT Instructor</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">California Institute of Applied Technology (CIAT)</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Teaching CompTIA Tech+ Fundamentals (CIS100B). Mentoring future technical professionals and translating complex infrastructure concepts for adult learners.</em></p>
-                </div>
-                <div class="card">
-                    <h3>Graduate Education</h3>
-                    <p style="font-weight: 600; color: var(--primary);">M.S. in Leadership</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Northeastern University</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Concentration in IT Project Management. Focus: SDLC Frameworks, Enterprise Project Execution, & Cross-functional Team Leadership.</em></p>
-                </div>
-                <div class="card">
-                    <h3>Undergraduate Education</h3>
-                    <p style="font-weight: 600; color: var(--primary);">B.S. in Business Information Systems</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Oregon State University</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: Systems Analysis & Design, Database Management, SQL Architecture, & Business Process Integration.</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
-        </div>
-    </footer>
-</body>
-</html>
+        </section>
