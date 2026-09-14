@@ -58,6 +58,17 @@
         .card li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
         .card li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
         
+        /* Experience Section */
+        .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
+        .exp-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
+        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
+        .exp-role { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+        .exp-company { font-size: 1rem; font-weight: 600; color: var(--accent); }
+        .exp-date { font-size: 0.875rem; color: var(--text-muted); background: var(--bg-main); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 500; }
+        .exp-bullets { list-style: none; margin-top: 0.75rem; }
+        .exp-bullets li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
+        .exp-bullets li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
+
         /* Recommendations */
         .rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
         .rec-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; }
@@ -120,6 +131,7 @@
             <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
             <nav>
                 <a href="#competencies">Competencies</a>
+                <a href="#experience">Experience</a>
                 <a href="#frameworks">Methodology</a>
                 <a href="#case-studies">Case Studies</a>
                 <a href="#education">Education</a>
@@ -182,6 +194,90 @@
                         <li>System Topology & Sequence Diagrams</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">A documented career history of technical leadership, systems implementation, and business process engineering.</p>
+            <div class="timeline">
+                
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Adjunct IT Instructor</div>
+                            <div class="exp-company">California Institute of Applied Technology (CIAT)</div>
+                        </div>
+                        <div class="exp-date">2026 – Present</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Develop and deliver synchronous online course modules for adult learners covering computer fundamentals and certification prep aligned with the CompTIA Tech+ curriculum (CIS100B).</li>
+                        <li>Translate technical system architectures, hardware fundamentals, and software concepts into accessible learning frameworks and practical lab assignments.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">ERP Business Process Analyst II</div>
+                            <div class="exp-company">City of Albuquerque</div>
+                        </div>
+                        <div class="exp-date">15-Month Engagement</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Led business process analysis and workflow re-engineering for PeopleSoft Enterprise Learning Management (ELM) and Travel & Expense transformation initiatives.</li>
+                        <li>Audited cross-departmental financial and operational workflows, drafting detailed requirements and process maps to resolve systemic production errors.</li>
+                        <li>Designed and executed comprehensive regression testing scripts across major upgrade cycles, securing zero-downtime deployments.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Technical Liaison / Client Implementation Manager</div>
+                            <div class="exp-company">AutoFi, Inc.</div>
+                        </div>
+                        <div class="exp-date">Contract / Full-Time Engagement</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Managed end-to-end technical implementations for major enterprise automotive partners, including Rocket Auto, CarGurus, and TrueCar.</li>
+                        <li>Analyzed API payloads in JSON and XML formats to diagnose data integration errors and validate direct data handshakes between proprietary systems and third-party platforms.</li>
+                        <li>Facilitated technical requirement discovery sessions with client engineering teams to configure custom integration workflows.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">Business Analyst / Project Manager</div>
+                            <div class="exp-company">Trinium Technologies</div>
+                        </div>
+                        <div class="exp-date">Prior Professional Engagement</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Led multi-phase client software deployments, managing scope, schedule, and deliverables for external enterprise accounts.</li>
+                        <li>Gathered functional requirements, mapped user journeys, and translated client business objectives into detailed technical specifications for development teams.</li>
+                        <li>Organized User Acceptance Testing (UAT) phases, maintaining defect logs and release management trackers.</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-role">HRIS PM & Systems Administrator Intern</div>
+                            <div class="exp-company">Blizzard Entertainment</div>
+                        </div>
+                        <div class="exp-date">Prior Professional Engagement</div>
+                    </div>
+                    <ul class="exp-bullets">
+                        <li>Executed forensic audits of HRIS data access protocols, identifying structural security risks and streamlining permission hierarchies.</li>
+                        <li>Evaluated enterprise Applicant Tracking Systems (ATS) against internal studio requirements, conducting comparative vendor analysis and executive demonstrations.</li>
+                        <li>Collaborated with platform engineering teams to maintain data integrity across internal employee databases.</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </section>
