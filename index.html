@@ -19,24 +19,16 @@
             --radius: 8px;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            line-height: 1.6;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
         .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-        
-        /* Header / Nav */
         header { background-color: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
         .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
         .brand { font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
         .brand span { color: var(--accent); font-weight: 400; }
         nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
         nav a:hover { color: var(--accent); }
-        
-        /* Hero Section */
         .hero { padding: 4rem 0 3.5rem 0; background-color: var(--bg-card); border-bottom: 1px solid var(--border); }
+        .hero-full { width: 100%; }
         .hero h1 { font-size: 2.75rem; color: var(--primary); line-height: 1.25; margin-bottom: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
         .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 100%; line-height: 1.7; }
         .hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
@@ -44,48 +36,30 @@
         .hero-banner { background: var(--bg-main); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; border-radius: 0 var(--radius) var(--radius) 0; }
         .hero-banner h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 0.25rem; }
         .hero-banner p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0; }
-        
-        /* Sections */
         section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
         .section-title { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.5rem; }
         .section-subtitle { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
-        
-        /* Grids & Cards */
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-        .card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.15rem; }
+        .card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem; }
         .card ul { list-style: none; }
         .card li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
         .card li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-        
-        /* Experience Section */
-        .timeline { display: flex; flex-direction: column; gap: 1.5rem; }
-        .exp-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); }
-        .exp-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem; }
-        .exp-role { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
-        .exp-company { font-size: 1rem; font-weight: 600; color: var(--accent); }
-        .exp-date { font-size: 0.875rem; color: var(--text-muted); background: var(--bg-main); border: 1px solid var(--border); padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 500; }
-        .exp-bullets { list-style: none; margin-top: 0.75rem; }
-        .exp-bullets li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; }
-        .exp-bullets li::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
-
-        /* Recommendations */
         .rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
         .rec-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; }
-        .rec-quote { font-size: 0.95rem; color: var(--text-muted); font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; }
+        .rec-quote { font-size: 0.95rem; color: var(--text-muted); font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; position: relative; }
         .rec-author { border-top: 1px solid var(--border); padding-top: 1rem; }
         .rec-name { font-weight: 700; font-size: 1rem; color: var(--primary); }
         .rec-title { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
         .rec-relationship { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
-        
-        /* BPMN Component */
-        .artifact-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 2rem; }
+        .artifact-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 2rem; font-family: system-ui, -apple-system, sans-serif; }
         .artifact-header { margin-bottom: 1.25rem; }
         .artifact-title { margin: 0 0 0.35rem 0; font-size: 1.15rem; font-weight: 700; color: #0f172a; }
         .artifact-sub { margin: 0; font-size: 0.875rem; color: #64748b; }
         .bpmn-container { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; overflow-x: auto; }
         .bpmn-toggle { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
         .toggle-btn { padding: 0.5rem 1rem; border: 1px solid #cbd5e1; background: #ffffff; color: #475569; font-weight: 600; font-size: 0.85rem; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; }
+        .toggle-btn:hover { background: #f1f5f9; }
         .toggle-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
         .flow-wrapper { display: none; align-items: center; gap: 0.75rem; min-width: 700px; }
         .flow-wrapper.active { display: flex; }
@@ -97,15 +71,19 @@
         .step-title { font-size: 0.85rem; font-weight: 600; color: #0f172a; }
         .step-sub { font-size: 0.75rem; color: #64748b; margin-top: 0.25rem; }
         .flow-arrow { color: #94a3b8; font-weight: bold; font-size: 1.1rem; }
-        
-        /* Table Styling */
         .table-responsive { width: 100%; overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
         table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
         th { background-color: #f1f5f9; color: var(--primary); padding: 0.75rem 1rem; font-weight: 600; border-bottom: 2px solid var(--border); }
         td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
         tr:last-child td { border-bottom: none; }
-        
-        /* Case Studies */
+        /* Mock Report Styles */
+        .mock-report { border-left: 4px solid var(--accent); background: #fff; padding: 2rem; border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .report-header { display: flex; justify-content: space-between; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+        .report-meta { text-align: right; font-size: 0.85rem; color: var(--text-muted); }
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+        .kpi-box { background: var(--bg-main); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); text-align: center; }
+        .kpi-value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
+        .kpi-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
         .case-study { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); }
         .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
         .case-title { font-size: 1.25rem; color: var(--primary); font-weight: 700; }
@@ -113,16 +91,10 @@
         .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
         .case-block h5 { color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
         .case-block p { font-size: 0.95rem; color: var(--text-muted); }
-        
-        /* Footer */
+        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
         footer { background: var(--primary); color: white; padding: 2rem 0; text-align: center; font-size: 0.9rem; }
         footer a { color: #93c5fd; text-decoration: none; }
-        
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .nav-container { flex-direction: column; justify-content: center; gap: 0.5rem; height: auto; padding: 1rem 0; }
-            nav a { margin: 0 0.5rem; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .nav-container { flex-direction: column; justify-content: center; gap: 0.5rem; height: auto; padding: 1rem 0; } nav a { margin: 0 0.5rem; } }
     </style>
 </head>
 <body>
@@ -131,44 +103,43 @@
             <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
             <nav>
                 <a href="#competencies">Competencies</a>
-                <a href="#experience">Experience</a>
                 <a href="#frameworks">Methodology</a>
+                <a href="#sample-deliverables">Sample Deliverables</a>
                 <a href="#case-studies">Case Studies</a>
-                <a href="#education">Education</a>
+                <a href="#recommendations">Recommendations</a>
             </nav>
         </div>
     </header>
-    
     <div class="hero">
         <div class="container">
             <div class="hero-full">
                 <h1>Translating Complex Business Needs into Technical Execution</h1>
-                <p>Senior IT Project Manager & Technical Business Analyst with over 10 years of experience driving complex enterprise system integrations, data migrations, and multi-phase client implementations. Proven expertise bridging business stakeholders and technical infrastructure.</p>
+                <p>Senior IT Business Analyst and Project Manager with over a decade of experience orchestrating enterprise system integrations, streamlining operational workflows, and delivering structured SDLC governance across cross-functional teams.</p>
                 <div class="hero-tags">
                     <span class="tag">Systems Architecture & Design</span>
-                    <span class="tag">SQL Development & API Integration</span>
-                    <span class="tag">Agile / Scrum Governance</span>
+                    <span class="tag">Agile / Waterfall Governance</span>
                     <span class="tag">Process Engineering (BPMN)</span>
-                    <span class="tag">JSON / XML Data Diagnosis</span>
+                    <span class="tag">Enterprise Integration</span>
+                    <span class="tag">Requirements Engineering</span>
                 </div>
                 <div class="hero-banner">
                     <h3>Technical & Strategic Leadership</h3>
-                    <p>Specializing in ERP/HRIS lifecycle management, strict deadline platform conversions, and zero-downtime deployments.</p>
+                    <p>Specializing in complex system rollouts, ERP/HRIS lifecycle management, and API-driven process automation.</p>
                 </div>
             </div>
         </div>
     </div>
-    
     <section id="competencies">
         <div class="container">
             <h2 class="section-title">Core Competencies</h2>
             <p class="section-subtitle">A balanced approach pairing functional process discovery with deep technical execution.</p>
+            
             <div class="grid-3">
                 <div class="card">
                     <h3>Requirements Engineering</h3>
                     <ul>
                         <li>Business Requirements Documents (BRD / FRD)</li>
-                        <li>User Story Mapping & Acceptance Criteria</li>
+                        <li>User Story Mapping & Acceptance Criteria (Gherkin)</li>
                         <li>Requirements Traceability Matrices (RTM)</li>
                         <li>As-Is vs. To-Be Business Process Mapping</li>
                         <li>Gap Analysis & Feasibility Studies</li>
@@ -188,134 +159,17 @@
                     <h3>Technical Systems Analysis</h3>
                     <ul>
                         <li>Data Flow Diagrams (DFD) & ERD Visualization</li>
-                        <li>API Payload Analysis (JSON / XML)</li>
+                        <li>API Payload Analysis & Integration Mapping</li>
                         <li>SQL Queries & Data Validation Testing</li>
-                        <li>Enterprise Software (PeopleSoft, Salesforce, ServiceNow)</li>
+                        <li>Enterprise Software (ERP, HRIS, Financials)</li>
                         <li>System Topology & Sequence Diagrams</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="experience">
-        <div class="container">
-            <h2 class="section-title">Professional Experience</h2>
-            <p class="section-subtitle">A documented career history of technical leadership, systems implementation, and business process engineering.</p>
-            <div class="timeline">
-                
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-role">Adjunct IT Instructor</div>
-                            <div class="exp-company">California Institute of Applied Technology (CIAT)</div>
-                        </div>
-                        <div class="exp-date">2026 – Present</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>Develop and deliver synchronous online course modules for adult learners covering computer fundamentals and certification prep aligned with the CompTIA Tech+ curriculum.</li>
-                        <li>Translate technical system architectures, hardware fundamentals, and software concepts into accessible learning frameworks and practical lab assignments.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-role">ERP Business Process Analyst II</div>
-                            <div class="exp-company">City of Albuquerque</div>
-                        </div>
-                        <div class="exp-date">15-Month Full-Time Engagement</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>Led business process analysis and workflow re-engineering for PeopleSoft Enterprise Learning Management (ELM) and Travel & Expense transformation initiatives.</li>
-                        <li>Audited cross-departmental financial and operational workflows, drafting detailed requirements and process maps to resolve systemic production errors.</li>
-                        <li>Designed and executed comprehensive regression testing scripts across major upgrade cycles, securing zero-downtime deployments.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-role">Enterprise Delivery Manager</div>
-                            <div class="exp-company">AutoFi, Inc.</div>
-                        </div>
-                        <div class="exp-date">Full-Time Engagement</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>Managed end-to-end technical implementations for major enterprise automotive partners, including Rocket Auto, CarGurus, and TrueCar.</li>
-                        <li>Analyzed API payloads in JSON and XML formats to diagnose data integration errors and validate direct data handshakes between proprietary systems and third-party platforms.</li>
-                        <li>Facilitated technical requirement discovery sessions with client engineering teams to configure custom integration workflows.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-role">Business Analyst / Project Manager</div>
-                            <div class="exp-company">Trinium Technologies</div>
-                        </div>
-                        <div class="exp-date">Prior Professional Engagement</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>Led multi-phase client software deployments, managing scope, schedule, and deliverables for external enterprise accounts.</li>
-                        <li>Gathered functional requirements, mapped user journeys, and translated client business objectives into detailed technical specifications for development teams.</li>
-                        <li>Organized User Acceptance Testing (UAT) phases, maintaining defect logs and release management trackers.</li>
-                    </ul>
-                </div>
-
-                <div class="exp-card">
-                    <div class="exp-header">
-                        <div>
-                            <div class="exp-role">HRIS PM & Systems Administrator Intern (Consecutive Internships)</div>
-                            <div class="exp-company">Blizzard Entertainment</div>
-                        </div>
-                        <div class="exp-date">Prior Professional Engagement</div>
-                    </div>
-                    <ul class="exp-bullets">
-                        <li>Executed forensic audits of HRIS data access protocols, identifying structural security risks and streamlining permission hierarchies.</li>
-                        <li>Evaluated enterprise Applicant Tracking Systems (ATS) against internal studio requirements, conducting comparative vendor analysis and executive demonstrations.</li>
-                        <li>Collaborated with platform engineering teams to maintain data integrity across internal employee databases.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="recommendations" style="background-color: var(--bg-card);">
-        <div class="container">
-            <h2 class="section-title">Professional Recommendations</h2>
-            <p class="section-subtitle">Endorsements from senior analysts, technical managers, and academic leaders.</p>
-            <div class="rec-grid">
-                <div class="rec-card">
-                    <p class="rec-quote">"Jaina displayed outstanding knowledge of the business, expertise in the craft, and motivation to provide high-quality work in a fast-paced environment with minimal guidance and direction..."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">James Rosensteel</div>
-                        <div class="rec-title">Senior Business Analyst</div>
-                        <div class="rec-relationship">Worked together at Blizzard Entertainment</div>
-                    </div>
-                </div>
-                <div class="rec-card">
-                    <p class="rec-quote">"Jaina actively sought out learning opportunities to improve her technical skill level across multiple disciplines... assisting in coordinating and communicating directly with multiple development teams."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">Stanley Fu</div>
-                        <div class="rec-title">IT Manager - Platform Engineering & Ops</div>
-                        <div class="rec-relationship">Senior to Jaina at Blizzard Entertainment</div>
-                    </div>
-                </div>
-                <div class="rec-card">
-                    <p class="rec-quote">"I came to recognize Jaina as a gifted student who possessed maturity, exceptional business intellect, and a keen interest in the topics of technology, business analysis, and agile methodologies..."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">Simon Cleveland, Ph.D.</div>
-                        <div class="rec-title">Educator & Author</div>
-                        <div class="rec-relationship">Graduate Program Instructor at Northeastern University</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     
-    <section id="frameworks">
+    <section id="frameworks" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Methodology & Visual Artifacts</h2>
             <p class="section-subtitle">Sample frameworks illustrating structured discovery, analysis, and execution planning.</p>
@@ -332,24 +186,48 @@
                     <div id="flow-asis" class="flow-wrapper active">
                         <div class="flow-step start-node error">Start</div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step"><span class="step-title">Manual Email Entry</span><span class="step-sub">Unstructured Data</span></div>
+                        <div class="flow-step">
+                            <span class="step-title">Manual Email Entry</span>
+                            <span class="step-sub">Unstructured Data</span>
+                        </div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step"><span class="step-title">Spreadsheet Logging</span><span class="step-sub">Human Error Risk</span></div>
+                        <div class="flow-step">
+                            <span class="step-title">Spreadsheet Logging</span>
+                            <span class="step-sub">Human Error Risk</span>
+                        </div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step decision-node"><span class="step-title">Manual Review</span><span class="step-sub">Manager Approval</span></div>
+                        <div class="flow-step decision-node">
+                            <span class="step-title">Manual Review</span>
+                            <span class="step-sub">Manager Approval</span>
+                        </div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step end-node error"><span class="step-title">3–5 Day Backlog</span><span class="step-sub">High Bottleneck</span></div>
+                        <div class="flow-step end-node error">
+                            <span class="step-title">3–5 Day Backlog</span>
+                            <span class="step-sub">High Bottleneck</span>
+                        </div>
                     </div>
                     <div id="flow-tobe" class="flow-wrapper">
                         <div class="flow-step start-node success">Start</div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight"><span class="step-title">Webhook Intake</span><span class="step-sub">JSON Payload</span></div>
+                        <div class="flow-step highlight">
+                            <span class="step-title">Webhook Intake</span>
+                            <span class="step-sub">JSON Payload</span>
+                        </div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight"><span class="step-title">Validation & Schema Check</span><span class="step-sub">Automated Rule Engine</span></div>
+                        <div class="flow-step highlight">
+                            <span class="step-title">Validation & Schema Check</span>
+                            <span class="step-sub">Automated Rule Engine</span>
+                        </div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight"><span class="step-title">Automated Routing</span><span class="step-sub">ERP/Database Push</span></div>
+                        <div class="flow-step highlight">
+                            <span class="step-title">Automated Routing</span>
+                            <span class="step-sub">ERP/Database Push</span>
+                        </div>
                         <div class="flow-arrow">→</div>
-                        <div class="flow-step end-node success"><span class="step-title">Instant Execution</span><span class="step-sub">&lt; 1s Latency</span></div>
+                        <div class="flow-step end-node success">
+                            <span class="step-title">Instant Execution</span>
+                            <span class="step-sub">&lt; 1s Latency</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -401,112 +279,171 @@
             </div>
         </div>
     </section>
-    
+
+    <!-- NEW SECTION: Sample Strategic Deliverables -->
+    <section id="sample-deliverables">
+        <div class="container">
+            <h2 class="section-title">Sample Strategic Deliverables</h2>
+            <p class="section-subtitle">Bridging the gap between technical requirements engineering and executive decision-making. (Note: Data is mocked for demonstration purposes).</p>
+            
+            <div class="mock-report">
+                <div class="report-header">
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 0.2rem;">Executive Summary: Operations API Automation ROI</h3>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Prepared by: Jaina McGregor | Lead Business Analyst</p>
+                    </div>
+                    <div class="report-meta">
+                        <p><strong>Status:</strong> Approved for Q3 Implementation</p>
+                        <p><strong>Document ID:</strong> ROI-SYS-994</p>
+                    </div>
+                </div>
+                
+                <div class="kpi-grid">
+                    <div class="kpi-box">
+                        <div class="kpi-value">65%</div>
+                        <div class="kpi-label">Projected SLA Improvement</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-value">1,200 hrs</div>
+                        <div class="kpi-label">Annual Manual Effort Saved</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-value">~4.5 Mos</div>
+                        <div class="kpi-label">ROI Breakeven Point</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-value"><span style="color: #16a34a;">Low</span></div>
+                        <div class="kpi-label">Implementation Risk</div>
+                    </div>
+                </div>
+
+                <div class="grid-3" style="gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem;">Business Problem (As-Is)</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Current intake relies on manual spreadsheet reconciliation across three legacy ERP modules, resulting in a 5-day processing backlog and a 12% data-entry defect rate impacting downstream reporting.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem;">Proposed Solution (To-Be)</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Deploy a middleware API layer (REST) to validate and route payloads directly into the central database. Introduce automated schema checks to reject non-conforming data before it enters the ecosystem.</p>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem;">Strategic Alignment</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted);">Directly supports the FY27 objective of achieving "Zero-Touch Operations." Reduces tech debt by decommissioning two redundant legacy servers and standardizing cross-department data governance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="case-studies" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Enterprise Case Studies</h2>
             <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
-            
             <div class="case-study">
                 <div class="case-header">
-                    <div class="case-title">Municipal ERP Transformation & Re-Engineering</div>
-                    <span class="case-badge">City of Albuquerque</span>
+                    <div class="case-title">Enterprise HRIS & Payroll Platform Migration</div>
+                    <span class="case-badge">System Integration & SDLC Execution</span>
                 </div>
-                <p>Led a 15-month engagement for the PeopleSoft ELM and Travel & Expense transformation, re-engineering core public sector workflows to optimize enterprise financial administration.</p>
+                <p>Orchestrated the requirements lifecycle and system integration mapping for an enterprise transition to a cloud-based HRIS platform, ensuring data continuity across complex legacy employee records.</p>
                 <div class="case-grid">
                     <div class="case-block">
                         <h5>The Challenge</h5>
-                        <p>Legacy Travel and Expense modules relied on inefficient approval processes, creating bottlenecks and complex production errors that impacted critical patching cycles.</p>
+                        <p>Legacy data structures lacked standardization, resulting in payload failures during interface syncing between payroll, benefit systems, and central databases.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Analytical Approach</h5>
-                        <p>Audited end-to-end PeopleSoft operational logic. Partnered with technical teams to isolate and diagnose underlying data abnormalities prior to the platform upgrade.</p>
+                        <p>Led cross-functional discovery workshops to document as-is data models. Designed a comprehensive gap analysis and mapped canonical payload schemas across systems.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Outcome</h5>
-                        <p>Successfully overhauled the travel and expense workflows and established a robust regression testing strategy, achieving zero-downtime deployment during critical enterprise patching cycles.</p>
+                        <p>Achieved 100% data fidelity during migration cutover, eliminated manual reconciliation processes, and established automated validation rules for post-launch governance.</p>
                     </div>
                 </div>
             </div>
-            
             <div class="case-study">
                 <div class="case-header">
-                    <div class="case-title">Enterprise Implementation & API Integration</div>
-                    <span class="case-badge">AutoFi, Inc.</span>
+                    <div class="case-title">Municipal / Public Sector Business Process Re-Engineering</div>
+                    <span class="case-badge">Process Improvement & Governance</span>
                 </div>
-                <p>Managed simultaneous technical implementations and core integration frameworks for major enterprise automotive SaaS clients, including Rocket Auto, CarGurus, and TrueCar.</p>
+                <p>Evaluated and modernized legacy ERP enterprise workflows for public sector administrative and infrastructure management groups.</p>
                 <div class="case-grid">
                     <div class="case-block">
                         <h5>The Challenge</h5>
-                        <p>Connecting distinct client operational platforms required complex, customized API cadences, creating a high risk of payload transmission failures.</p>
+                        <p>Siloed operational departments relied on paper-heavy approval loops, causing multi-week delays in work order processing and resource allocation.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Analytical Approach</h5>
-                        <p>Directed comprehensive requirements gathering for API and EDI exchanges. Extensively utilized JSON and XML to perform deep API diagnoses and validate system handshakes.</p>
+                        <p>Conducted end-to-end process audits, synthesized stakeholder requirements into clear user stories, and engineered streamlined digital routing paths.</p>
                     </div>
                     <div class="case-block">
                         <h5>The Outcome</h5>
-                        <p>Ensured 100% data transmission integrity across all enterprise client deployments, significantly reducing integration error rates and speeding up client onboarding.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="case-study">
-                <div class="case-header">
-                    <div class="case-title">HRIS Forensic Audit & ATS Strategy</div>
-                    <span class="case-badge">Blizzard Entertainment</span>
-                </div>
-                <p>Spearheaded targeted data auditing and vendor evaluation initiatives within the enterprise human resources technology stack to support a rapidly scaling global workforce.</p>
-                <div class="case-grid">
-                    <div class="case-block">
-                        <h5>The Challenge</h5>
-                        <p>Existing HRIS data access protocols were causing downstream systemic errors, while the current Applicant Tracking System lacked necessary functionality for specialized studio recruitment.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Analytical Approach</h5>
-                        <p>Executed a forensic audit of HRIS permissions and data structures. Concurrently analyzed and evaluated multiple ATS platforms against strict internal studio requirements.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Outcome</h5>
-                        <p>Presented data-driven mitigation strategies to senior management that successfully reduced downstream HRIS errors, and delivered functional demonstrations for the new ATS implementation.</p>
+                        <p>Reduced work order approval lead times by 65%, established transparent status tracking dashboards, and enforced standardized audit logging.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section id="education">
+    <section id="recommendations">
+        <div class="container">
+            <h2 class="section-title">Professional Recommendations</h2>
+            <p class="section-subtitle">Endorsements from senior analysts, technical managers, and academic leaders.</p>
+            <div class="rec-grid">
+                <div class="rec-card">
+                    <p class="rec-quote">"Jaina displayed outstanding knowledge of the business, expertise in the craft, and motivation to provide high-quality work in a fast-paced environment with minimal guidance and direction... Jaina is well-spoken and articulate; exemplifying such highly-desired qualities in a candidate."</p>
+                    <div class="rec-author">
+                        <div class="rec-name">James Rosensteel</div>
+                        <div class="rec-title">Senior Business Analyst</div>
+                        <div class="rec-relationship">Worked together at Blizzard Entertainment</div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <p class="rec-quote">"Jaina not only took on a major role in assisting with service management within the team in understanding IT workflow and processes, she actively sought out learning opportunities to improve her technical skill level across multiple disciplines... assisting in coordinating and communicating directly with multiple development teams."</p>
+                    <div class="rec-author">
+                        <div class="rec-name">Stanley Fu</div>
+                        <div class="rec-title">IT Manager - Platform Engineering & Ops</div>
+                        <div class="rec-relationship">Senior to Jaina at Blizzard Entertainment</div>
+                    </div>
+                </div>
+                <div class="rec-card">
+                    <p class="rec-quote">"I came to recognize Jaina as a gifted student who possessed maturity, exceptional business intellect, and a keen interest in the topics of technology, business analysis, and agile methodologies... She demonstrated exceptional intelligence, enthusiasm, and motivation to learn."</p>
+                    <div class="rec-author">
+                        <div class="rec-name">Simon Cleveland, Ph.D.</div>
+                        <div class="rec-title">Educator & Author</div>
+                        <div class="rec-relationship">Graduate Program Instructor at Northeastern University</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" style="background-color: var(--bg-card);">
         <div class="container">
             <h2 class="section-title">Academic & Technical Foundation</h2>
             <p class="section-subtitle">Grounded in business information systems with advanced graduate emphasis on IT project leadership.</p>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Academic Instruction</h3>
-                    <p style="font-weight: 600; color: var(--primary);">Adjunct IT Instructor</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">California Institute of Applied Technology (CIAT)</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Developing and delivering synchronous online courses for adult learners on Computer Fundamentals and CompTIA Tech+ (CIS100B).</em></p>
-                </div>
+            <div class="edu-grid">
                 <div class="card">
                     <h3>Graduate Education</h3>
                     <p style="font-weight: 600; color: var(--primary);">M.S. in Leadership</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Concentration in IT Project Management</p>
                     <p style="font-size: 0.85rem; color: var(--text-muted);">Northeastern University</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Concentration in Leading and Managing Technical Projects. Focus: SDLC Frameworks, Enterprise Project Execution, & Team Leadership.</em></p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: SDLC Frameworks, Waterfall vs. Agile Methodologies, Enterprise Project Execution, & Team Leadership.</em></p>
                 </div>
                 <div class="card">
                     <h3>Undergraduate Education</h3>
                     <p style="font-weight: 600; color: var(--primary);">B.S. in Business Information Systems</p>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">College of Business</p>
                     <p style="font-size: 0.85rem; color: var(--text-muted);">Oregon State University</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Dean's Leadership and Professional Achievement Award. Focus: Systems Analysis & Design, Database Management, & Architecture.</em></p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: Systems Analysis & Design, Database Management, Business Process Integration, & Enterprise Application Architecture.</em></p>
                 </div>
             </div>
         </div>
     </section>
-    
     <footer>
         <div class="container">
-            <p>&copy; 2026 Jaina McGregor. All Rights Reserved.
+            <p>&copy; 2026 Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+        </div>
     </footer>
-    
     <script>
         function switchBPMNState(state) {
             const asIsFlow = document.getElementById('flow-asis');
