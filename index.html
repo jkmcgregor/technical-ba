@@ -94,8 +94,7 @@ td{padding:.7rem .9rem;border-bottom:1px solid var(--line)}tr:last-child td{bord
 .term .c{color:var(--mu)}.term .i{color:var(--ac)}.term .o{color:var(--ok)}.term .w{color:var(--wn)}
 .mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin-bottom:1rem}
 .mini div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.8rem;text-align:center}.mini b{display:block;font-size:1.5rem;color:var(--ac)}.mini span{font-size:.75rem;color:var(--mu)}
-.dl{text-align:center;border:1px dashed var(--line);display:flex;flex-direction:column;justify-content:space-between}
-.dl-actions{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-top:1.1rem}
+.dl{text-align:center;border:1px dashed var(--line)}
 footer{border-top:1px solid var(--line);padding:2rem 0;text-align:center;color:var(--mu);font-size:.88rem}footer a{margin:0 .5rem}
 .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.js .reveal.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
@@ -237,34 +236,19 @@ footer{border-top:1px solid var(--line);padding:2rem 0;text-align:center;color:v
       <p class="sub">Sanitized, real-world work product.</p>
       <div class="grid">
         <div class="card dl">
-          <div>
-            <h3>API Data Mapping &amp; Payload Spec</h3>
-            <p>Field-level JSON mapping matrix, HTTP error handling, exponential backoff, dead-letter queue routing, and an 8-requirement RTM.</p>
-          </div>
-          <div class="dl-actions">
-            <a class="btn" href="./API_Data_Mapping_Sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-            <a class="btn g" href="./API_Data_Mapping_Sample.pdf" download="API_Data_Mapping_Sample.pdf">Download</a>
-          </div>
+          <h3>API Data Mapping &amp; Payload Spec</h3>
+          <p>Field-level JSON mapping matrix, HTTP error handling, exponential backoff, dead-letter queue routing, and an 8-requirement RTM.</p>
+          <p style="margin-top:1rem"><a class="btn" href="./API_Data_Mapping_Sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a></p>
         </div>
         <div class="card dl">
-          <div>
-            <h3>User Story &amp; Acceptance Matrix</h3>
-            <p>Travel &amp; Expense restructuring: Gherkin scenarios, audit logging rules, orphaned-record handling, and RBAC constraints.</p>
-          </div>
-          <div class="dl-actions">
-            <a class="btn" href="./User_Story_Matrix_Sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-            <a class="btn g" href="./User_Story_Matrix_Sample.pdf" download="User_Story_Matrix_Sample.pdf">Download</a>
-          </div>
+          <h3>User Story &amp; Acceptance Matrix</h3>
+          <p>Travel &amp; Expense restructuring: Gherkin scenarios, audit logging rules, orphaned-record handling, and RBAC constraints.</p>
+          <p style="margin-top:1rem"><a class="btn" href="./User_Story_Matrix_Sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a></p>
         </div>
         <div class="card dl">
-          <div>
-            <h3>BRD Discovery Excerpt</h3>
-            <p>ATS vendor evaluation: scope boundaries, stakeholder matrix, RACI, MoSCoW requirements, and a weighted scoring model.</p>
-          </div>
-          <div class="dl-actions">
-            <a class="btn" href="./BRD_Excerpt_Sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a>
-            <a class="btn g" href="./BRD_Excerpt_Sample.pdf" download="BRD_Excerpt_Sample.pdf">Download</a>
-          </div>
+          <h3>BRD Discovery Excerpt</h3>
+          <p>ATS vendor evaluation: scope boundaries, stakeholder matrix, RACI, MoSCoW requirements, and a weighted scoring model.</p>
+          <p style="margin-top:1rem"><a class="btn" href="./BRD_Excerpt_Sample.pdf" target="_blank" rel="noopener noreferrer">View PDF</a></p>
         </div>
       </div>
       <p class="sub" style="margin-top:1rem">All three are sanitized portfolio editions; organization, vendor, and client details are generalized.</p>
