@@ -1,467 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaina McGregor | Senior Business Analyst & IT Project Manager</title>
-    <style>
-        :root {
-            --primary: #1e293b;
-            --primary-light: #334155;
-            --accent: #2563eb;
-            --accent-soft: #eff6ff;
-            --text-main: #0f172a;
-            --text-muted: #475569;
-            --bg-main: #f8fafc;
-            --bg-card: #ffffff;
-            --border: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --radius: 8px;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
-        header { background-color: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .brand { font-size: 1.25rem; font-weight: 700; color: var(--primary); text-decoration: none; }
-        .brand span { color: var(--accent); font-weight: 400; }
-        nav a { color: var(--text-muted); text-decoration: none; margin-left: 1.5rem; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
-        nav a:hover { color: var(--accent); }
-        .hero { padding: 4rem 0 3.5rem 0; background-color: var(--bg-card); border-bottom: 1px solid var(--border); }
-        .hero-full { width: 100%; }
-        .hero h1 { font-size: 2.75rem; color: var(--primary); line-height: 1.25; margin-bottom: 1.25rem; font-weight: 800; letter-spacing: -0.02em; }
-        .hero p { font-size: 1.15rem; color: var(--text-muted); margin-bottom: 2rem; max-width: 100%; line-height: 1.7; }
-        .hero-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2rem; }
-        .tag { background-color: var(--accent-soft); color: var(--accent); padding: 0.4rem 0.85rem; border-radius: 20px; font-size: 0.875rem; font-weight: 600; }
-        .hero-banner { background: var(--bg-main); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.25rem 1.5rem; border-radius: 0 var(--radius) var(--radius) 0; }
-        .hero-banner h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 0.25rem; }
-        .hero-banner p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0; }
-        section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
-        .section-title { font-size: 1.75rem; color: var(--primary); margin-bottom: 0.5rem; }
-        .section-subtitle { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.05rem; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); }
-        .card h3 { color: var(--primary); margin-bottom: 0.75rem; font-size: 1.15rem; display: flex; align-items: center; gap: 0.5rem; }
-        .card ul { list-style: none; }
-        .card li { position: relative; padding-left: 1.25rem; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.95rem; }
-        .card li::before { content: "•"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-        .rec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
-        .rec-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: space-between; }
-        .rec-quote { font-size: 0.95rem; color: var(--text-muted); font-style: italic; line-height: 1.6; margin-bottom: 1.5rem; position: relative; }
-        .rec-author { border-top: 1px solid var(--border); padding-top: 1rem; }
-        .rec-name { font-weight: 700; font-size: 1rem; color: var(--primary); }
-        .rec-title { font-size: 0.85rem; color: var(--accent); font-weight: 600; }
-        .rec-relationship { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
-        .artifact-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 2rem; font-family: system-ui, -apple-system, sans-serif; }
-        .artifact-header { margin-bottom: 1.25rem; }
-        .artifact-title { margin: 0 0 0.35rem 0; font-size: 1.15rem; font-weight: 700; color: #0f172a; }
-        .artifact-sub { margin: 0; font-size: 0.875rem; color: #64748b; }
-        .bpmn-container { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.25rem; overflow-x: auto; }
-        .bpmn-toggle { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; }
-        .toggle-btn { padding: 0.5rem 1rem; border: 1px solid #cbd5e1; background: #ffffff; color: #475569; font-weight: 600; font-size: 0.85rem; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; }
-        .toggle-btn:hover { background: #f1f5f9; }
-        .toggle-btn.active { background: #2563eb; color: #ffffff; border-color: #2563eb; }
-        .flow-wrapper { display: none; align-items: center; gap: 0.75rem; min-width: 700px; }
-        .flow-wrapper.active { display: flex; }
-        .flow-step { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; padding: 0.75rem; display: flex; flex-direction: column; justify-content: center; min-width: 120px; text-align: center; }
-        .flow-step.start-node, .flow-step.end-node { font-weight: bold; padding: 0.5rem 0.75rem; }
-        .flow-step.error { background: #fef2f2; border-color: #fca5a5; color: #991b1b; }
-        .flow-step.success { background: #f0fdf4; border-color: #86efac; color: #166534; }
-        .flow-step.highlight { background: #eff6ff; border-color: #93c5fd; }
-        .step-title { font-size: 0.85rem; font-weight: 600; color: #0f172a; }
-        .step-sub { font-size: 0.75rem; color: #64748b; margin-top: 0.25rem; }
-        .flow-arrow { color: #94a3b8; font-weight: bold; font-size: 1.1rem; }
-        .table-responsive { width: 100%; overflow-x: auto; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); }
-        table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem; }
-        th { background-color: #f1f5f9; color: var(--primary); padding: 0.75rem 1rem; font-weight: 600; border-bottom: 2px solid var(--border); }
-        td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
-        tr:last-child td { border-bottom: none; }
-        /* Mock Report Styles */
-        .mock-report { border-left: 4px solid var(--accent); background: #fff; padding: 2rem; border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow); border-top: 1px solid var(--border); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .report-header { display: flex; justify-content: space-between; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
-        .report-meta { text-align: right; font-size: 0.85rem; color: var(--text-muted); }
-        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
-        .kpi-box { background: var(--bg-main); padding: 1rem; border-radius: 6px; border: 1px solid var(--border); text-align: center; }
-        .kpi-value { font-size: 1.5rem; font-weight: 700; color: var(--primary); }
-        .kpi-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
-        .case-study { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); }
-        .case-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
-        .case-title { font-size: 1.25rem; color: var(--primary); font-weight: 700; }
-        .case-badge { background: #f1f5f9; color: var(--primary-light); padding: 0.25rem 0.6rem; border-radius: 4px; font-size: 0.8rem; font-weight: 600; }
-        .case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
-        .case-block h5 { color: var(--primary); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
-        .case-block p { font-size: 0.95rem; color: var(--text-muted); }
-        .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        footer { background: var(--primary); color: white; padding: 2rem 0; text-align: center; font-size: 0.9rem; }
-        footer a { color: #93c5fd; text-decoration: none; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .nav-container { flex-direction: column; justify-content: center; gap: 0.5rem; height: auto; padding: 1rem 0; } nav a { margin: 0 0.5rem; } }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="brand">Jaina McGregor <span>| Business Analysis & PM</span></a>
-            <nav>
-                <a href="#competencies">Competencies</a>
-                <a href="#frameworks">Methodology</a>
-                <a href="#sample-deliverables">Sample Deliverables</a>
-                <a href="#case-studies">Case Studies</a>
-                <a href="#recommendations">Recommendations</a>
-            </nav>
-        </div>
-    </header>
-    <div class="hero">
-        <div class="container">
-            <div class="hero-full">
-                <h1>Translating Complex Business Needs into Technical Execution</h1>
-                <p>Senior IT Business Analyst and Project Manager with over a decade of experience orchestrating enterprise system integrations, streamlining operational workflows, and delivering structured SDLC governance across cross-functional teams.</p>
-                <div class="hero-tags">
-                    <span class="tag">Systems Architecture & Design</span>
-                    <span class="tag">Agile / Waterfall Governance</span>
-                    <span class="tag">Process Engineering (BPMN)</span>
-                    <span class="tag">Enterprise Integration</span>
-                    <span class="tag">Requirements Engineering</span>
-                </div>
-                <div class="hero-banner">
-                    <h3>Technical & Strategic Leadership</h3>
-                    <p>Specializing in complex system rollouts, ERP/HRIS lifecycle management, and API-driven process automation.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section id="competencies">
-        <div class="container">
-            <h2 class="section-title">Core Competencies</h2>
-            <p class="section-subtitle">A balanced approach pairing functional process discovery with deep technical execution.</p>
-            
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Requirements Engineering</h3>
-                    <ul>
-                        <li>Business Requirements Documents (BRD / FRD)</li>
-                        <li>User Story Mapping & Acceptance Criteria (Gherkin)</li>
-                        <li>Requirements Traceability Matrices (RTM)</li>
-                        <li>As-Is vs. To-Be Business Process Mapping</li>
-                        <li>Gap Analysis & Feasibility Studies</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>SDLC & Delivery Management</h3>
-                    <ul>
-                        <li>Agile / Scrum & Waterfall Methodologies</li>
-                        <li>Cross-Functional Team & Vendor Coordination</li>
-                        <li>UAT Planning, Execution, & Defect Tracking</li>
-                        <li>Scope Governance & Change Control</li>
-                        <li>Release Readiness & Cutover Strategy</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Technical Systems Analysis</h3>
-                    <ul>
-                        <li>Data Flow Diagrams (DFD) & ERD Visualization</li>
-                        <li>API Payload Analysis & Integration Mapping</li>
-                        <li>SQL Queries & Data Validation Testing</li>
-                        <li>Enterprise Software (ERP, HRIS, Financials)</li>
-                        <li>System Topology & Sequence Diagrams</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="frameworks" style="background-color: var(--bg-card);">
-        <div class="container">
-            <h2 class="section-title">Methodology & Visual Artifacts</h2>
-            <p class="section-subtitle">Sample frameworks illustrating structured discovery, analysis, and execution planning.</p>
-            <div class="artifact-card">
-                <div class="artifact-header">
-                    <h3 class="artifact-title">Sample Artifact 1: As-Is vs. To-Be Automated Intake Architecture (BPMN 2.0)</h3>
-                    <p class="artifact-sub">Demonstrating how manual intake bottlenecks are restructured into API-driven automated processing queues.</p>
-                </div>
-                <div class="bpmn-container">
-                    <div class="bpmn-toggle">
-                        <button id="btn-asis" class="toggle-btn active" onclick="switchBPMNState('asis')">As-Is Process (Manual)</button>
-                        <button id="btn-tobe" class="toggle-btn" onclick="switchBPMNState('tobe')">To-Be Process (Automated)</button>
-                    </div>
-                    <div id="flow-asis" class="flow-wrapper active">
-                        <div class="flow-step start-node error">Start</div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step">
-                            <span class="step-title">Manual Email Entry</span>
-                            <span class="step-sub">Unstructured Data</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step">
-                            <span class="step-title">Spreadsheet Logging</span>
-                            <span class="step-sub">Human Error Risk</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step decision-node">
-                            <span class="step-title">Manual Review</span>
-                            <span class="step-sub">Manager Approval</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step end-node error">
-                            <span class="step-title">3–5 Day Backlog</span>
-                            <span class="step-sub">High Bottleneck</span>
-                        </div>
-                    </div>
-                    <div id="flow-tobe" class="flow-wrapper">
-                        <div class="flow-step start-node success">Start</div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight">
-                            <span class="step-title">Webhook Intake</span>
-                            <span class="step-sub">JSON Payload</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight">
-                            <span class="step-title">Validation & Schema Check</span>
-                            <span class="step-sub">Automated Rule Engine</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step highlight">
-                            <span class="step-title">Automated Routing</span>
-                            <span class="step-sub">ERP/Database Push</span>
-                        </div>
-                        <div class="flow-arrow">→</div>
-                        <div class="flow-step end-node success">
-                            <span class="step-title">Instant Execution</span>
-                            <span class="step-sub">&lt; 1s Latency</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="artifact-card" style="margin-bottom: 0;">
-                <div class="artifact-header">
-                    <h3 class="artifact-title">Sample Artifact 2: Requirements Traceability Matrix (RTM) Structure</h3>
-                    <p class="artifact-sub">Maintaining complete line-of-sight from high-level business goals down to UAT test execution.</p>
-                </div>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Req ID</th>
-                                <th>Business Objective</th>
-                                <th>Functional Requirement</th>
-                                <th>System Component</th>
-                                <th>User Story ID</th>
-                                <th>UAT Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>BRD-01</strong></td>
-                                <td>Reduce customer onboarding time by 50%</td>
-                                <td>System must validate payload data asynchronously via API</td>
-                                <td>Integration Middleware</td>
-                                <td>US-102</td>
-                                <td><span style="color: #16a34a; font-weight: bold;">Passed</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>BRD-02</strong></td>
-                                <td>Ensure audit compliance for user access</td>
-                                <td>Role-based access logs must persist for 7 years</td>
-                                <td>Security / IAM Module</td>
-                                <td>US-204</td>
-                                <td><span style="color: #16a34a; font-weight: bold;">Passed</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>BRD-03</strong></td>
-                                <td>Automate error alerting for failed syncing</td>
-                                <td>Trigger webhook notification on 5xx status codes</td>
-                                <td>Notification Service</td>
-                                <td>US-305</td>
-                                <td><span style="color: #2563eb; font-weight: bold;">In Progress</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Jaina McGregor | Senior Technical Business Analyst & IT Project Manager</title><meta name="description" content="Senior IT Project Manager and Technical Business Analyst: enterprise integrations, ERP, EDI, API payload analysis, requirements engineering, and UAT.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script><style>
+:root{--bg:#0a0f1e;--card:#121a33;--card2:#0e1529;--line:#222c4f;--tx:#c5cee3;--hd:#f5f7fb;--mu:#8793b3;--ac:#4f9dff;--ok:#34d399;--wn:#fbbf24;--er:#f87171}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--tx);background-image:radial-gradient(900px 420px at 85% -8%,color-mix(in srgb,var(--ac) 16%,transparent),transparent)}
+[hidden]{display:none!important}
+.mono,.tag,code{font-family:"Fira Code",ui-monospace,Menlo,Consolas,monospace}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+a{color:var(--ac)}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+header.nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,15,30,.82);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:1rem}
+.brand{color:var(--hd);font-weight:700;text-decoration:none;white-space:nowrap}.brand span{color:var(--ac);font-weight:500}
+nav{display:flex;gap:.2rem;overflow-x:auto;scrollbar-width:none}
+nav a{color:var(--mu);text-decoration:none;font-size:.88rem;padding:.4rem .7rem;border-radius:6px;white-space:nowrap;transition:.2s}
+nav a:hover,nav a.on{color:var(--hd);background:var(--card)}
+.hero{padding:4.5rem 0 3.2rem}
+h1{font-size:clamp(2.3rem,6vw,3.7rem);color:var(--hd);line-height:1.08;letter-spacing:-.035em;font-weight:800}
+.role{color:var(--ac);font-size:clamp(1.05rem,2.5vw,1.35rem);font-weight:600;margin:.7rem 0 1.1rem}
+.lead{max-width:800px;font-size:1.08rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.6rem 0 0}
+.btn{display:inline-block;padding:.65rem 1.15rem;border-radius:8px;font-weight:600;font-size:.92rem;text-decoration:none;background:var(--ac);color:#06101f;transition:.2s;border:1px solid var(--ac)}
+.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.btn.g{background:transparent;color:var(--hd);border-color:var(--line)}.btn.g:hover{border-color:var(--ac)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin-top:2rem}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem}
+.stat b{display:block;font-size:1.9rem;color:var(--hd);line-height:1.2}.stat span{font-size:.82rem;color:var(--mu)}
+.quote{border-left:3px solid var(--ac);background:color-mix(in srgb,var(--ac) 8%,transparent);padding:1rem 1.25rem;border-radius:0 10px 10px 0;margin-top:1.8rem;max-width:860px;color:var(--hd)}
+.note{border-left:3px solid var(--wn);background:rgba(251,191,36,.07);padding:.85rem 1.1rem;border-radius:0 8px 8px 0;font-size:.92rem;margin-top:1.6rem;max-width:860px}
+section{padding:3.6rem 0;border-top:1px solid var(--line)}
+h2{color:var(--hd);font-size:1.8rem;letter-spacing:-.02em;line-height:1.2}
+.sub{color:var(--mu);margin:.4rem 0 1.8rem;max-width:760px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.3rem;transition:border-color .2s}
+.card:hover{border-color:var(--ac)}
+.card h3{color:var(--hd);font-size:1.05rem;margin-bottom:.55rem}
+.card p{font-size:.93rem}
+ul.l{list-style:none}ul.l li{padding-left:1.1rem;position:relative;font-size:.93rem;margin:.4rem 0}ul.l li:before{content:"▹";position:absolute;left:0;color:var(--ac)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.tag{font-size:.75rem;padding:.18rem .55rem;border-radius:6px;background:color-mix(in srgb,var(--ac) 13%,transparent);color:var(--ac);border:1px solid color-mix(in srgb,var(--ac) 28%,transparent)}
+.acc{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:.8rem;overflow:hidden;transition:border-color .2s}
+.acc.open{border-color:color-mix(in srgb,var(--ac) 55%,var(--line))}
+.acc-h{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:0;color:inherit;font:inherit;text-align:left;padding:1.1rem 1.3rem;cursor:pointer}
+.acc-h:hover{background:rgba(255,255,255,.03)}
+.acc-h b{display:block;color:var(--hd);font-size:1.05rem}.acc-h em{font-style:normal;color:var(--ac);font-size:.84rem}
+.acc-h i{width:9px;height:9px;border-right:2px solid var(--mu);border-bottom:2px solid var(--mu);transform:rotate(45deg);transition:.25s;flex:none;margin-right:.2rem}
+.acc.open .acc-h i{transform:rotate(225deg)}
+.acc-b{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}.acc.open .acc-b{grid-template-rows:1fr}
+.acc-in{overflow:hidden;min-height:0;padding:0 1.3rem}.acc.open .acc-in{padding-bottom:1.25rem}
+.acc-in>p{font-size:.95rem}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1rem;margin-top:.9rem}
+.cols h5{color:var(--hd);font-size:.88rem;margin-bottom:.2rem}.cols p,.cols li{font-size:.92rem}
+.tabs,.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.1rem}
+.tabs button,.chips button,.sm{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:.45rem .85rem;font:500 .85rem Inter,sans-serif;cursor:pointer;transition:.2s}
+.tabs button:hover,.chips button:hover,.sm:hover{border-color:var(--ac);color:var(--hd)}
+.tabs button.on,.chips button.on{background:var(--ac);color:#06101f;border-color:var(--ac)}
+.panel{display:none}.panel.on{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.lab{background:var(--card2);border:1px solid var(--line);border-radius:14px;padding:1.4rem;margin-bottom:1.2rem}
+.lab-h{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}.lab-h b{color:var(--hd);font-size:1.1rem}
+.split{display:grid;grid-template-columns:minmax(200px,1fr) 2fr;gap:1rem}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+.pick{display:flex;flex-direction:column;gap:.4rem}
+.pick button{text-align:left;background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:.55rem .8rem;cursor:pointer;font:500 .85rem Inter,sans-serif;transition:.2s}
+.pick button:hover{border-color:var(--ac)}.pick button.on{border-color:var(--ac);background:color-mix(in srgb,var(--ac) 14%,var(--card));color:var(--hd)}
+.detail{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.1rem 1.2rem}
+.detail h4{color:var(--hd);margin-bottom:.2rem}.detail dt{color:var(--ac);font-size:.8rem;margin-top:.7rem}.detail dd{font-size:.92rem}
+label.f{display:block;font-size:.85rem;color:var(--mu);margin-bottom:.8rem}
+input[type=number],select{background:var(--bg);border:1px solid var(--line);color:var(--hd);padding:.45rem .6rem;border-radius:6px;font:inherit;width:100%;max-width:200px;display:block;margin-top:.25rem}
+input[type=range]{width:100%;accent-color:var(--ac);display:block;margin-top:.3rem}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.8rem 0}
+.step{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:.55rem .8rem;font-size:.85rem;text-align:center;transition:.3s}
+.step small{display:block;color:var(--mu);font-size:.72rem}
+.step.ok{border-color:var(--ok);color:var(--ok)}.step.bad{border-color:var(--er);color:var(--er)}.step.hi{border-color:var(--ac);color:var(--hd)}
+.arr{color:var(--mu)}
+.bar{height:10px;background:var(--bg);border-radius:6px;overflow:hidden;border:1px solid var(--line)}.bar i{display:block;height:100%;background:var(--ac);transition:width .4s}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{width:100%;border-collapse:collapse;font-size:.88rem;text-align:left}
+th{background:var(--card);color:var(--hd);padding:.7rem .9rem;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:.7rem .9rem;border-bottom:1px solid var(--line)}tr:last-child td{border-bottom:0}
+.pill{font-size:.72rem;padding:.12rem .5rem;border-radius:99px;font-weight:600;white-space:nowrap}
+.pill.ok{background:rgba(52,211,153,.15);color:var(--ok)}.pill.wn{background:rgba(251,191,36,.15);color:var(--wn)}.pill.er{background:rgba(248,113,113,.15);color:var(--er)}.pill.id{background:rgba(255,255,255,.07);color:var(--mu)}
+.term{font:.82rem/1.7 "Fira Code",ui-monospace,monospace;background:#05080f;border:1px solid var(--line);border-radius:10px;padding:1rem;overflow-x:auto;max-height:260px;overflow-y:auto}
+.term .c{color:var(--mu)}.term .i{color:var(--ac)}.term .o{color:var(--ok)}.term .w{color:var(--wn)}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin-bottom:1rem}
+.mini div{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:.8rem;text-align:center}.mini b{display:block;font-size:1.5rem;color:var(--ac)}.mini span{font-size:.75rem;color:var(--mu)}
+.dl{text-align:center;border:1px dashed var(--line)}
+footer{border-top:1px solid var(--line);padding:2rem 0;text-align:center;color:var(--mu);font-size:.88rem}footer a{margin:0 .5rem}
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal{opacity:1;transform:none}}
+@media(max-width:700px){.nav .wrap{flex-direction:column;height:auto;padding:.6rem 1.25rem}nav{width:100%}.hero{padding-top:2.5rem}}
+</style></head>
+<body><header class="nav"><div class="wrap"><a class="brand" href="#top">Jaina McGregor <span>| Business Analysis &amp; PM</span></a><nav><a href="#capabilities">Capabilities</a><a href="#demos">Interactive Demos</a><a href="#artifacts">Artifacts</a><a href="#cases">Delivery Record</a><a href="#toolbox">Toolbox</a><a href="#edu">Credentials</a></nav></div></header>
+<main id="top"><div class="hero"><div class="wrap"><h1>Jaina McGregor</h1><div class="role">Senior Technical Business Analyst &amp; IT Project Manager</div><p class="lead">Senior IT Project Manager and Technical Business Analyst driving enterprise system integrations, data migrations, and multi-phase client implementations. Hands-on with data transmission mapping (API, JSON, XML, EDI) and cross-functional requirements work across ERP, financial services, and e-commerce environments.</p><div class="btns"><a class="btn" href="mailto:JainaMcGregor@gmail.com">Contact me</a><a class="btn g" href="#demos">Try the demos</a><a class="btn g" href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener">LinkedIn</a><a class="btn g" href="https://github.com/jkmcgregor" target="_blank" rel="noopener">GitHub</a></div><div class="stats"><div class="stat"><b data-n="15" data-s="+">0</b><span>years of enterprise delivery</span></div><div class="stat"><b data-n="3" data-s="">0</b><span>concurrent automotive SaaS client implementations</span></div><div class="stat"><b data-n="3" data-s="">0</b><span>major retail logistics EDI clients</span></div><div class="stat"><b>Zero</b><span>downtime across PeopleSoft upgrade patching cycles</span></div></div><div class="quote">&ldquo;Successful technical delivery requires more than gathering requirements; it requires rigorous expectation management. I translate technical constraints into business realities, secure stakeholder buy-in, and protect engineering bandwidth from scope creep.&rdquo;</div></div></div><section id="capabilities" class="reveal"><div class="wrap"><h2>Core Capabilities</h2><p class="sub">Click through the four disciplines I bring to every engagement.</p><div class="tabset"><div class="tabs"><button data-t="req" class=on>Requirements Engineering</button><button data-t="sdlc">SDLC &amp; Delivery</button><button data-t="proc">Process Mapping</button><button data-t="tech">Technical Analysis</button></div><div class="panel on" data-p="req"><div class="card"><h3>What I produce</h3><ul class="l"><li>BRD / FRD authorship</li><li>User story mapping with Gherkin acceptance criteria</li><li>Requirements Traceability Matrices (RTM)</li><li>MoSCoW prioritization in stakeholder workshops</li></ul></div></div><div class="panel" data-p="sdlc"><div class="card"><h3>How I deliver</h3><ul class="l"><li>Agile/Scrum and Waterfall delivery</li><li>UAT planning and execution; defect logs and release trackers</li><li>Release and cutover strategy</li><li>Scope, schedule, and cross-team coordination for concurrent implementations</li></ul></div></div><div class="panel" data-p="proc"><div class="card"><h3>How I analyze</h3><ul class="l"><li>As-Is / To-Be process models</li><li>Gap analysis and feasibility studies</li><li>Workflow re-engineering and BPR</li><li>Lean Six Sigma Yellow Belt, Kanban, OKR frameworks</li></ul></div></div><div class="panel" data-p="tech"><div class="card"><h3>Where I go deep</h3><ul class="l"><li>API payload analysis (JSON/XML) and EDI data-exchange design</li><li>SQL validation against production data</li><li>Data flow and ERD diagrams</li><li>Postman-based API testing</li></ul></div></div></div></div></section><section id="demos" class="reveal"><div class="wrap"><h2>Interactive Demos</h2><p class="sub">Three small tools built from my real documents, so you can see how I think about traceability, controls, and vendor decisions.</p>
+<div class="lab"><div class="lab-h"><b>Requirements Traceability Explorer</b><span class="tag">Based on my API Data Mapping spec</span></div>
+<p class="sub" style="margin:0 0 1rem">Pick a business requirement to trace it to the technical specification and the UAT criteria that prove it. Content is drawn from my sanitized portfolio document.</p>
+<div class="split"><div class="pick" id="rtmList"></div><div class="detail" id="rtmDetail"></div></div></div>
 
-    <!-- NEW SECTION: Sample Strategic Deliverables -->
-    <section id="sample-deliverables">
-        <div class="container">
-            <h2 class="section-title">Sample Strategic Deliverables</h2>
-            <p class="section-subtitle">Bridging the gap between technical requirements engineering and executive decision-making. (Note: Data is mocked for demonstration purposes).</p>
-            
-            <div class="mock-report">
-                <div class="report-header">
-                    <div>
-                        <h3 style="color: var(--primary); font-size: 1.3rem; margin-bottom: 0.2rem;">Executive Summary: Operations API Automation ROI</h3>
-                        <p style="color: var(--text-muted); font-size: 0.9rem;">Prepared by: Jaina McGregor | Lead Business Analyst</p>
-                    </div>
-                    <div class="report-meta">
-                        <p><strong>Status:</strong> Approved for Q3 Implementation</p>
-                        <p><strong>Document ID:</strong> ROI-SYS-994</p>
-                    </div>
-                </div>
-                
-                <div class="kpi-grid">
-                    <div class="kpi-box">
-                        <div class="kpi-value">65%</div>
-                        <div class="kpi-label">Projected SLA Improvement</div>
-                    </div>
-                    <div class="kpi-box">
-                        <div class="kpi-value">1,200 hrs</div>
-                        <div class="kpi-label">Annual Manual Effort Saved</div>
-                    </div>
-                    <div class="kpi-box">
-                        <div class="kpi-value">~4.5 Mos</div>
-                        <div class="kpi-label">ROI Breakeven Point</div>
-                    </div>
-                    <div class="kpi-box">
-                        <div class="kpi-value"><span style="color: #16a34a;">Low</span></div>
-                        <div class="kpi-label">Implementation Risk</div>
-                    </div>
-                </div>
+<div class="lab"><div class="lab-h"><b>Approval Routing Simulator</b><span class="tag">Based on my T&amp;E user stories (US-201)</span></div>
+<p class="sub" style="margin:0 0 1rem">Adjust the threshold and expense total to see which Gherkin acceptance criterion applies. The threshold value here is illustrative.</p>
+<div class="split"><div>
+<label class="f">Routing threshold ($)<input type="number" id="thr" value="5000" min="0" step="100"></label>
+<label class="f">Expense report total: <b id="amtv" style="color:var(--hd)"></b><input type="range" id="amt" min="0" max="10000" step="50" value="4950"></label>
+<label class="f"><input type="checkbox" id="down"> Compliance monitoring endpoint is unreachable</label></div>
+<div class="detail" id="routeOut"></div></div></div>
 
-                <div class="grid-3" style="gap: 1.5rem; margin-bottom: 1.5rem;">
-                    <div>
-                        <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem;">Business Problem (As-Is)</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Current intake relies on manual spreadsheet reconciliation across three legacy ERP modules, resulting in a 5-day processing backlog and a 12% data-entry defect rate impacting downstream reporting.</p>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem;">Proposed Solution (To-Be)</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Deploy a middleware API layer (REST) to validate and route payloads directly into the central database. Introduce automated schema checks to reject non-conforming data before it enters the ecosystem.</p>
-                    </div>
-                    <div>
-                        <h4 style="font-size: 1rem; color: var(--primary); margin-bottom: 0.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.25rem;">Strategic Alignment</h4>
-                        <p style="font-size: 0.9rem; color: var(--text-muted);">Directly supports the FY27 objective of achieving "Zero-Touch Operations." Reduces tech debt by decommissioning two redundant legacy servers and standardizing cross-department data governance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="lab"><div class="lab-h"><b>Weighted Vendor Scorecard</b><span class="tag">Based on my ATS evaluation BRD</span></div>
+<p class="sub" style="margin:0 0 1rem">Score two hypothetical vendors from 1&ndash;5 on each pillar. Weights match the evaluation model in my discovery document: Technical 30%, Security &amp; Compliance 25%, User Experience 25%, Cost 20%.</p>
+<div class="grid" id="vend"></div></div>
+</div></section><section id="artifacts" class="reveal"><div class="wrap"><h2>Methodology &amp; Execution Artifacts</h2><p class="sub">Sanitized, real-world work product.</p><div class="grid"><div class="card dl"><h3>API Data Mapping &amp; Payload Spec</h3><p>Field-level JSON mapping matrix, HTTP error handling, exponential backoff, dead-letter queue routing, and an 8-requirement RTM.</p><p style="margin-top:1rem"><a class="btn" href="API_Data_Mapping_Sample.pdf" target="_blank" rel="noopener">Download PDF</a></p></div><div class="card dl"><h3>User Story &amp; Acceptance Matrix</h3><p>Travel &amp; Expense restructuring: Gherkin scenarios, audit logging rules, orphaned-record handling, and RBAC constraints.</p><p style="margin-top:1rem"><a class="btn" href="User_Story_Matrix_Sample.pdf" target="_blank" rel="noopener">Download PDF</a></p></div><div class="card dl"><h3>BRD Discovery Excerpt</h3><p>ATS vendor evaluation: scope boundaries, stakeholder matrix, RACI, MoSCoW requirements, and a weighted scoring model.</p><p style="margin-top:1rem"><a class="btn" href="BRD_Excerpt_Sample.pdf" target="_blank" rel="noopener">Download PDF</a></p></div></div><p class="sub" style="margin-top:1rem">All three are sanitized portfolio editions; organization, vendor, and client details are generalized.</p></div></section><section id="cases" class="reveal"><div class="wrap"><h2>Delivery Record</h2><p class="sub">Expand any engagement for the challenge, my approach, and the result.</p><div class="acc open"><button class="acc-h" aria-expanded="true"><span><b>Public-Sector ERP Transformation &amp; Zero-Downtime Upgrades</b><em>City of Albuquerque &middot; PeopleSoft ELM, Travel &amp; Expense</em></span><i></i></button><div class="acc-b"><div class="acc-in"><p>Led the Travel &amp; Expense and ELM transformation, re-engineering workflows and diagnosing production errors across major upgrade cycles.</p><div class="cols"><div><h5>The challenge</h5><p>Legacy approval routing had been layered with undocumented custom SQL, and proprietary report logic was silently filtering financial records out of standard outputs.</p></div><div><h5>What I did</h5><ul class="l"><li>Wrote user stories and Gherkin acceptance criteria to replace tribal knowledge with testable rules</li><li>Compared PeopleSoft&rsquo;s custom report function side by side against Oracle SQL Developer to expose the flawed filter</li><li>Facilitated workshops with finance, HR, and IT to align on requirements</li><li>Designed and ran the regression testing strategy for critical patching cycles</li></ul></div><div><h5>The outcome</h5><p>Zero-downtime deployment through critical patching cycles, a root cause for the missing records, corrected query structures for recurring reports, and streamlining strategies for the expense lifecycle.</p></div></div><div class="tags"><span class="tag">PeopleSoft</span><span class="tag">SQL</span><span class="tag">Oracle SQL Developer</span><span class="tag">Regression Testing</span><span class="tag">Gherkin</span><span class="tag">RBAC</span></div></div></div></div><div class="acc"><button class="acc-h" aria-expanded="false"><span><b>Global Investment Bank Infrastructure Requirements</b><em>Houlihan Lokey &middot; Technical Business Analyst</em></span><i></i></button><div class="acc-b"><div class="acc-in"><p>Directed requirements gathering for large-scale IT infrastructure projects within a global investment bank.</p><div class="cols"><div><h5>Scope</h5><p>Documented and mapped current business processes, producing process models, specifications, and diagrams to support SDLC-wide improvements.</p></div><div><h5>What I did</h5><ul class="l"><li>Gathered and compiled requirements with development teams, then tracked and enforced requirement status through the lifecycle</li><li>Developed test case scenarios from requirements</li><li>Coordinated User Acceptance Testing</li></ul></div><div><h5>Stack</h5><p>SQL Server, ServiceNow, Tableau, Salesforce</p></div></div><div class="tags"><span class="tag">Requirements</span><span class="tag">UAT</span><span class="tag">Process Modeling</span><span class="tag">ServiceNow</span><span class="tag">Tableau</span></div></div></div></div><div class="acc"><button class="acc-h" aria-expanded="false"><span><b>BA + PM + EDI Delivery Through an Acquisition</b><em>Trinium Technologies / WiseTech Global</em></span><i></i></button><div class="acc-b"><div class="acc-in"><p>Served in a blended BA/PM/EDI role, keeping client-facing delivery continuous before, during, and after the acquisition.</p><div class="cols"><div><h5>Scope</h5><p>Led multi-phase client software deployments: functional requirements, user journey mapping, and translation of business objectives into technical specifications.</p></div><div><h5>What I did</h5><ul class="l"><li>Owned EDI connection work and data-exchange design for major retail logistics clients (Amazon, Walmart, Target)</li><li>Managed scope, schedule, and coordination across concurrent implementations</li><li>Organized UAT phases and maintained defect logs and release trackers</li><li>Contributed to monitoring and dashboard tooling for Tier-1 logistics operations</li></ul></div><div><h5>Why it matters</h5><p>Full-lifecycle ownership: elicitation, specification, EDI build, UAT, and release tracking in one role.</p></div></div><div class="tags"><span class="tag">EDI</span><span class="tag">UAT</span><span class="tag">Release Management</span><span class="tag">Logistics</span><span class="tag">Dashboards</span></div></div></div></div><div class="acc"><button class="acc-h" aria-expanded="false"><span><b>Third-Party API Integration &amp; Payload Governance</b><em>AutoFi &middot; Enterprise Delivery Manager</em></span><i></i></button><div class="acc-b"><div class="acc-in"><p>Managed simultaneous technical implementations for Rocket Auto, CarGurus, and TrueCar, using JSON/XML payload diagnosis to validate data handshakes.</p><div class="cols"><div><h5>The challenge</h5><p>A vendor&rsquo;s published API documentation did not match the payloads arriving in production webhooks, risking silent truncation and referential-integrity failures in a regulated financial-servicing context.</p></div><div><h5>What I did</h5><ul class="l"><li>Reconciled vendor docs, observed production behavior, and internal data standards</li><li>Authored the field-level mapping matrix, error-handling rules (retry with backoff, dead-letter queue), and an 8-requirement RTM</li><li>Ran requirements sessions with client engineering teams to configure integration workflows per partner platform</li><li>Used Postman for API testing</li></ul></div><div><h5>The outcome</h5><p>A single authoritative, version-controlled specification with audit-ready traceability. See the API Data Mapping artifact above.</p></div></div><div class="tags"><span class="tag">REST</span><span class="tag">JSON/XML</span><span class="tag">Postman</span><span class="tag">Webhooks</span><span class="tag">RTM</span></div></div></div></div><div class="acc"><button class="acc-h" aria-expanded="false"><span><b>Order Management Configuration &amp; BRD Authorship</b><em>OceanX &middot; Senior Configuration Specialist</em></span><i></i></button><div class="acc-b"><div class="acc-in"><p>Configured and scaled OMS/WMS architecture supporting high-volume direct-to-consumer fulfillment for national beauty and wellness brands.</p><div class="cols"><div><h5>What I did</h5><ul class="l"><li>Authored Business Requirements Documents and translated them into configuration and technical specs</li><li>Configured offers, item codes, backend jobs, and payment gateway setups</li><li>Conducted UAT on new releases; used SQL to inspect schema and validate data</li></ul></div><div><h5>Stakeholders</h5><p>Led consulting and requirements sessions directly with client stakeholders; trained client and internal teams on the platform and tracked requests in JIRA.</p></div></div><div class="tags"><span class="tag">BRD</span><span class="tag">SQL</span><span class="tag">UAT</span><span class="tag">JIRA</span><span class="tag">Payment Gateways</span></div></div></div></div><div class="acc"><button class="acc-h" aria-expanded="false"><span><b>Enterprise ATS Vendor Evaluation</b><em>Blizzard Entertainment &middot; HRIS Project Management</em></span><i></i></button><div class="acc-b"><div class="acc-in"><p>Evaluated applicant tracking platforms against internal requirements and built and delivered demonstrations for decision-makers.</p><div class="cols"><div><h5>Approach</h5><p>Deep-dive evaluation of multiple systems, synthesized into a comparative matrix to identify optimal solutions.</p></div><div><h5>Related audit work</h5><p>Led a forensic audit of HRIS data access protocols, presented mitigation strategies to senior management, and documented resulting access-control policies with HR and IT.</p></div><div><h5>Outcome</h5><p>A top-three vendor recommendation with a transition roadmap; the enterprise adopted one of the recommended platforms.</p></div></div><div class="tags"><span class="tag">Vendor Evaluation</span><span class="tag">HRIS</span><span class="tag">Access Control</span><span class="tag">Stakeholder Management</span></div></div></div></div></div></section><section id="toolbox" class="reveal"><div class="wrap"><h2>Technical Toolbox</h2><p class="sub">Platforms and tools used in day-to-day enterprise delivery.</p><div class="grid"><div class="card"><h3>Data &amp; Integration</h3><div class="tags"><span class="tag">SQL</span><span class="tag">Microsoft SQL Server</span><span class="tag">Oracle SQL Developer</span><span class="tag">Postman</span><span class="tag">JSON / XML</span><span class="tag">EDI</span><span class="tag">Python</span></div></div><div class="card"><h3>Enterprise Platforms</h3><div class="tags"><span class="tag">PeopleSoft ELM/HCM</span><span class="tag">Salesforce</span><span class="tag">ServiceNow</span><span class="tag">Tableau</span><span class="tag">CargoWise</span><span class="tag">SharePoint</span></div></div><div class="card"><h3>Delivery &amp; Mapping</h3><div class="tags"><span class="tag">JIRA</span><span class="tag">Confluence</span><span class="tag">Visio</span><span class="tag">Lucidchart</span><span class="tag">MS Project</span><span class="tag">Wrike</span></div></div></div></div></section><section id="edu" class="reveal"><div class="wrap"><h2>Education &amp; Credentials</h2><p class="sub">Business information systems foundation with graduate focus on technical project leadership.</p><div class="grid"><div class="card"><h3>Graduate</h3><p><b style='color:var(--hd)'>M.S., Leadership</b><br>Leading &amp; Managing Technical Projects<br>Northeastern University</p></div><div class="card"><h3>Undergraduate</h3><p><b style='color:var(--hd)'>B.S., Business Information Systems</b><br>Oregon State University<br>Dean&rsquo;s Leadership and Professional Achievement Award</p></div><div class="card"><h3>Certifications</h3><ul class="l"><li>Six Sigma Yellow Belt (SSYB)</li><li>Scrum Fundamentals &amp; Scrum for Operations/DevOps</li><li>Lean Kanban Essentials with AI</li><li>OKR Fundamentals with AI</li><li>W3Schools SQL</li></ul></div></div></div></section></main>
+<footer><div class="wrap"><p>Jaina McGregor &middot; Business Analysis &amp; PM</p><p style="margin-top:.5rem"><a href="mailto:JainaMcGregor@gmail.com">Email</a><a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/jkmcgregor" target="_blank" rel="noopener">GitHub</a></p></div></footer>
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+$$('.acc-h').forEach(b=>b.addEventListener('click',()=>{const a=b.parentElement,o=a.classList.toggle('open');b.setAttribute('aria-expanded',o)}));
+$$('.tabset').forEach(ts=>{const bs=$$('.tabs button',ts),ps=$$('.panel',ts);bs.forEach(b=>b.addEventListener('click',()=>{bs.forEach(x=>x.classList.toggle('on',x===b));ps.forEach(p=>p.classList.toggle('on',p.dataset.p===b.dataset.t))}))});
+function count(el){const n=+el.dataset.n,s=el.dataset.s||'',t0=performance.now();(function f(t){const p=Math.min((t-t0)/1100,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)})(t0)}
+window.countUp=count;
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');$$('[data-n]',e.target).forEach(count);io.unobserve(e.target)}}),{threshold:.08});
+$$('.reveal,.hero').forEach(x=>io.observe(x));
+const links=$$('header nav a'),so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')=='#'+e.target.id))}),{rootMargin:'-40% 0px -55% 0px'});
+links.forEach(a=>{const s=$(a.getAttribute('href'));s&&so.observe(s)});
+$$('.chips[data-filter]').forEach(c=>c.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('button',c).forEach(x=>x.classList.toggle('on',x===b));const f=b.dataset.f;$$('[data-tags]').forEach(i=>i.hidden=!(f=='all'||i.dataset.tags.split(' ').includes(f)))}));
+window.$=$;window.$$=$$;
+})();
 
-    <section id="case-studies" style="background-color: var(--bg-card);">
-        <div class="container">
-            <h2 class="section-title">Enterprise Case Studies</h2>
-            <p class="section-subtitle">Real-world delivery scenarios detailing system complexities, analytical approaches, and results.</p>
-            <div class="case-study">
-                <div class="case-header">
-                    <div class="case-title">Enterprise HRIS & Payroll Platform Migration</div>
-                    <span class="case-badge">System Integration & SDLC Execution</span>
-                </div>
-                <p>Orchestrated the requirements lifecycle and system integration mapping for an enterprise transition to a cloud-based HRIS platform, ensuring data continuity across complex legacy employee records.</p>
-                <div class="case-grid">
-                    <div class="case-block">
-                        <h5>The Challenge</h5>
-                        <p>Legacy data structures lacked standardization, resulting in payload failures during interface syncing between payroll, benefit systems, and central databases.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Analytical Approach</h5>
-                        <p>Led cross-functional discovery workshops to document as-is data models. Designed a comprehensive gap analysis and mapped canonical payload schemas across systems.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Outcome</h5>
-                        <p>Achieved 100% data fidelity during migration cutover, eliminated manual reconciliation processes, and established automated validation rules for post-launch governance.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="case-study">
-                <div class="case-header">
-                    <div class="case-title">Municipal / Public Sector Business Process Re-Engineering</div>
-                    <span class="case-badge">Process Improvement & Governance</span>
-                </div>
-                <p>Evaluated and modernized legacy ERP enterprise workflows for public sector administrative and infrastructure management groups.</p>
-                <div class="case-grid">
-                    <div class="case-block">
-                        <h5>The Challenge</h5>
-                        <p>Siloed operational departments relied on paper-heavy approval loops, causing multi-week delays in work order processing and resource allocation.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Analytical Approach</h5>
-                        <p>Conducted end-to-end process audits, synthesized stakeholder requirements into clear user stories, and engineered streamlined digital routing paths.</p>
-                    </div>
-                    <div class="case-block">
-                        <h5>The Outcome</h5>
-                        <p>Reduced work order approval lead times by 65%, established transparent status tracking dashboards, and enforced standardized audit logging.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="recommendations">
-        <div class="container">
-            <h2 class="section-title">Professional Recommendations</h2>
-            <p class="section-subtitle">Endorsements from senior analysts, technical managers, and academic leaders.</p>
-            <div class="rec-grid">
-                <div class="rec-card">
-                    <p class="rec-quote">"Jaina displayed outstanding knowledge of the business, expertise in the craft, and motivation to provide high-quality work in a fast-paced environment with minimal guidance and direction... Jaina is well-spoken and articulate; exemplifying such highly-desired qualities in a candidate."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">James Rosensteel</div>
-                        <div class="rec-title">Senior Business Analyst</div>
-                        <div class="rec-relationship">Worked together at Blizzard Entertainment</div>
-                    </div>
-                </div>
-                <div class="rec-card">
-                    <p class="rec-quote">"Jaina not only took on a major role in assisting with service management within the team in understanding IT workflow and processes, she actively sought out learning opportunities to improve her technical skill level across multiple disciplines... assisting in coordinating and communicating directly with multiple development teams."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">Stanley Fu</div>
-                        <div class="rec-title">IT Manager - Platform Engineering & Ops</div>
-                        <div class="rec-relationship">Senior to Jaina at Blizzard Entertainment</div>
-                    </div>
-                </div>
-                <div class="rec-card">
-                    <p class="rec-quote">"I came to recognize Jaina as a gifted student who possessed maturity, exceptional business intellect, and a keen interest in the topics of technology, business analysis, and agile methodologies... She demonstrated exceptional intelligence, enthusiasm, and motivation to learn."</p>
-                    <div class="rec-author">
-                        <div class="rec-name">Simon Cleveland, Ph.D.</div>
-                        <div class="rec-title">Educator & Author</div>
-                        <div class="rec-relationship">Graduate Program Instructor at Northeastern University</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="education" style="background-color: var(--bg-card);">
-        <div class="container">
-            <h2 class="section-title">Academic & Technical Foundation</h2>
-            <p class="section-subtitle">Grounded in business information systems with advanced graduate emphasis on IT project leadership.</p>
-            <div class="edu-grid">
-                <div class="card">
-                    <h3>Graduate Education</h3>
-                    <p style="font-weight: 600; color: var(--primary);">M.S. in Leadership</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Concentration in IT Project Management</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Northeastern University</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: SDLC Frameworks, Waterfall vs. Agile Methodologies, Enterprise Project Execution, & Team Leadership.</em></p>
-                </div>
-                <div class="card">
-                    <h3>Undergraduate Education</h3>
-                    <p style="font-weight: 600; color: var(--primary);">B.S. in Business Information Systems</p>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">College of Business</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Oregon State University</p>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;"><em>Focus: Systems Analysis & Design, Database Management, Business Process Integration, & Enterprise Application Architecture.</em></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Jaina McGregor. All Rights Reserved. | <a href="https://linkedin.com/in/jainamcgregor" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
-        </div>
-    </footer>
-    <script>
-        function switchBPMNState(state) {
-            const asIsFlow = document.getElementById('flow-asis');
-            const toBeFlow = document.getElementById('flow-tobe');
-            const btnAsIs = document.getElementById('btn-asis');
-            const btnToBe = document.getElementById('btn-tobe');
-            if (state === 'asis') {
-                asIsFlow.classList.add('active');
-                toBeFlow.classList.remove('active');
-                btnAsIs.classList.add('active');
-                btnToBe.classList.remove('active');
-            } else {
-                toBeFlow.classList.add('active');
-                asIsFlow.classList.remove('active');
-                btnToBe.classList.add('active');
-                btnAsIs.classList.remove('active');
-            }
-        }
-    </script>
-</body>
-</html>
+(function(){
+const R=[
+["BR-001","Real-time scheduling sync","Real-time synchronization of scheduling/cadence events between the vendor platform and the core system","Asynchronous webhook receiver with a sub-5-second processing SLA; polling fallback at 15-minute intervals","Event created in the vendor sandbox reflects in the core database within the SLA window in at least 99% of 200 test transactions."],
+["BR-002","Eliminate payload drift","Eliminate data-integrity failures caused by payload/documentation drift","Field-level data mapping matrix with explicit type, constraint, and transformation rules","100% of mapped fields validated against fixtures covering nominal, boundary, and malformed cases."],
+["BR-003","Correct local time display","Correct local-time display of scheduled events across customer time zones","UTC-to-local conversion using IANA time-zone data with DST awareness","Test cases spanning DST transition dates produce correct local timestamps in 100% of cases."],
+["BR-004","Block invalid financial data","Prevent invalid financial data (currency/amount) from entering the scheduling-billing linkage","ISO 4217 currency validation; minor-unit-to-decimal conversion","Zero invalid currency codes accepted across 50 negative tests; correct conversion for zero- and two-decimal currencies."],
+["BR-005","Survive vendor outages","Resilience against transient vendor API failures without data loss","Exponential backoff (6 attempts, jitter) with dead-letter-queue escalation","Simulated 503 failures succeed eventually in at least 95% of retry-eligible cases; the rest route correctly to the DLQ."],
+["BR-008","No duplicate processing","Prevent duplicate event processing under at-least-once delivery","Idempotency via event_id uniqueness and Idempotency-Key header","Replaying the same event_id produces zero duplicate writes across 25 iterations."]];
+const L=$('#rtmList'),D=$('#rtmDetail');
+function show(i){$$('button',L).forEach((b,j)=>b.classList.toggle('on',j==i));const r=R[i];D.innerHTML='<h4>'+r[0]+' &middot; '+r[1]+'</h4><dl><dt>Business requirement</dt><dd>'+r[2]+'</dd><dt>Technical specification</dt><dd>'+r[3]+'</dd><dt>UAT validation criteria</dt><dd>'+r[4]+'</dd></dl>'}
+R.forEach((r,i)=>{const b=document.createElement('button');b.textContent=r[0]+' '+r[1];b.onclick=()=>show(i);L.appendChild(b)});show(0);
+const thr=$('#thr'),amt=$('#amt'),dn=$('#down'),out=$('#routeOut');
+function route(){const t=+thr.value||0,a=+amt.value;$('#amtv').textContent='$'+a.toLocaleString();const hi=a>=t;
+let ac=hi?(a==t?'AC-201-3: boundary value is evaluated inclusively':'AC-201-2: at or above threshold bypasses the manager'):'AC-201-1: under threshold routes to the manager queue';
+let wh=hi?(dn.checked?'Webhook failed. Routing still completes and the failure is logged for retry (AC-201-4).':'Webhook sent to compliance monitoring with report ID and routing reason.'):'No director-level notification.';
+out.innerHTML='<div class="flow"><div class="step hi">Submit<small>validation passes</small></div><span class="arr">&rarr;</span><div class="step '+(hi?'':'ok')+'">Manager queue<small>'+(hi?'bypassed':'assigned')+'</small></div><span class="arr">&rarr;</span><div class="step '+(hi?'ok':'')+'">Director queue<small>'+(hi?'assigned':'not triggered')+'</small></div></div><dl><dt>Criterion applied</dt><dd>'+ac+'</dd><dt>Notification</dt><dd>'+wh+'</dd><dt>Audit log</dt><dd>Routing decision logged with report ID, threshold evaluated, resulting queue, and timestamp.</dd></dl>'}
+[thr,amt,dn].forEach(e=>e.addEventListener('input',route));route();
+const P=[["Technical Architecture",30],["Security &amp; Compliance",25],["User Experience",25],["Cost &amp; Licensing",20]],V=$('#vend');
+['Vendor A','Vendor B'].forEach((n,vi)=>{const c=document.createElement('div');c.className='card';c.innerHTML='<h3>'+n+'</h3>'+P.map((p,i)=>'<label class="f">'+p[0]+' ('+p[1]+'%): <b class="v">3</b><input type="range" min="1" max="5" value="3" data-i="'+i+'"></label>').join('')+'<div class="bar"><i></i></div><p style="margin-top:.6rem">Composite: <b class="comp" style="color:var(--hd)"></b> / 5</p>';V.appendChild(c);
+const rs=$$('input',c);function u(){let s=0;rs.forEach((r,i)=>{r.previousElementSibling.textContent=r.value;s+=r.value*P[i][1]/100});c.querySelector('.comp').textContent=s.toFixed(2);c.querySelector('.bar i').style.width=(s/5*100)+'%'}rs.forEach(r=>r.addEventListener('input',u));u()});
+})();
+</script></body></html>
